@@ -20,7 +20,7 @@ title                    : "出社會後的歷練"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "CasparTing"
-description              : "An amazing website."
+description              : "這是一個自主學習的紀錄網站，涵蓋了嵌入式系統、Linux、MCU、程式設計、網站架設"
 url                      : "https://casparting.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "casparting/casparting.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
