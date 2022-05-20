@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "蘇庭廣"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/advatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "我經常從Google獲得很多知識受益良多，也熱愛寫筆記除了給自己看之外，也分享給想學習的夥伴^_^"
   location         : "台北, 台灣"
   email            : "caspar.tg.su@gmail.com"
