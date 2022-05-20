@@ -11,7 +11,8 @@ tags:
 ---
 # 前言
 Saleae Logic USB 邏輯分析儀在Linux Debian上無法連接的問題。
-
+# 錯誤訊息
+>Install a udev rules file to allow non-root access to Saleae devices
 # 解決方式
 參考下方連接的檔案內容
 
