@@ -1,3 +1,15 @@
+---
+title: ASUS USB-AC51 韌體安裝 Linux Debian
+excerpt: >
+  解決Linux Debian上無法使用ASUS USB-AC51 Wifi dongle的問題。
+categories:
+  - Linux
+tags:
+  - Linux
+  - Debian
+  - ASUS
+  - USB-AC51
+---
 # 前言
 解決Linux Debian上無法使用ASUS USB-AC51 Wifi dongle的問題。
 # firmware-misc-nonfree套件
