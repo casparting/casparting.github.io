@@ -1,7 +1,7 @@
 ---
 title: 執行NuMaker-PFM-M487KM開發板範例程式
 excerpt: >
-  執行NuMaker-PFM-M487KM開發板範例程式。
+  在Linux上運行NuEclipse，燒入並執行NuMaker-PFM-M487KM開發板範例程式。
 categories:
   - Embedded System
 tags:
