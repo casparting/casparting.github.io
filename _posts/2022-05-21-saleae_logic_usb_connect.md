@@ -25,3 +25,6 @@ Ref: [99-saleae-logic-libusb.rules](https://github.com/keesj/saleae-logic-libusb
 ```
 接上Saleae Logic USB出現下面的圖示表示連接成功
 ![connecting](/assets/images/logic_connect.png)
+
+# 結語
+快速簡單寫了解決方法，希望能幫助到遇到跟我一樣問題的朋友。
