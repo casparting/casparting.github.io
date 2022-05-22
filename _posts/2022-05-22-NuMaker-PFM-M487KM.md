@@ -51,7 +51,53 @@ $ ./install.sh
 $ cd eclipse/
 $ ./eclipse
 ```
-預設已經設定好Global Tools Paths與OpenOCD Nu-Link，這邊要注意的是文件中OpenOCD Nu-Link的路徑寫錯了，應該是放在自己的家目錄/local/OpenOCD，而不是在/usr/底下！
+請設定Global Tools Paths
+Windows->Preference->C/C++->Build->Global Tools Paths->Toolchain folder:
+路徑請選擇：/home/caspar/local/gcc-arm-none-eabi-6-2017-q1-update
+
+預設已經設定好OpenOCD Nu-Link，這邊要注意的是文件中OpenOCD Nu-Link的路徑寫錯了，應該是放在自己的家目錄/local/OpenOCD，而不是在/usr/底下！
+
+### M480BSP
+請到[此連結](https://github.com/OpenNuvoton/M480BSP)下載M480BSP，裡面有很多sample code，請[參考此文件](https://github.com/OpenNuvoton/M480BSP/blob/master/Readme.pdf)，指令如下：
+
+```
+$ git clone https://github.com/OpenNuvoton/M480BSP.git
+```
+
+# 開啟Sample code專案並設定與執行
+按照下面步驟開啟專案
+File->Import->General->Existing Projects into Workspace
+
+Select root directory請選擇此路徑
+/home/caspar/Project/M480BSP/SampleCode/NuMaker-PFM-M487/Heart_beating/GCC
+
+在點選Finish
+
+
+
+```
+$ cd /home/caspar/local/gcc-arm-none-eabi-6-2017-q1-update/bin
+$ export PATH=$PATH:`pwd`
+$ echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/caspar/local/gcc-arm-none-eabi-6-2017-q1-update/bin
+```
+
+# Troubleshoot
+## arm-none-eabi-g++ not found in PATH
+開啟後會發現出現錯誤訊息如圖所示
+![nueclipse_compiler_not_found](/assets/images/nueclipse_compiler_not_found.png)
+請設定Global Tools Paths
+Windows->Preference->C/C++->Build->Global Tools Paths->Toolchain folder:
+路徑請選擇：/home/caspar/local/gcc-arm-none-eabi-6-2017-q1-update
+
+## 無法開啟Project->Properties
+請按照底下步驟做設定
+請點兩下perference.ini讓它讀取
+
+# 想嘗試
+## Vscode + OpenOCD + ARM Toolchain + Docker
+(https://www.big-meter.com/opensource/en/61dad481dc76873900484665.html)
+
 
 ### 持續撰寫中。。。
 
