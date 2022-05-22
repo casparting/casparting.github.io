@@ -14,9 +14,11 @@ tags:
 ---
 
 # 前言
+
 利用假日空閒時間我兼了外包案子，首先要先很感謝這位Steven資深工程師給我機會實做M487專案，這邊紀錄我開發的過程。
 
 # 準備
+
 請先準備下面軟硬體配備。
 * 硬體
     - NuMaker-PFM-M487KM開發板
@@ -68,6 +70,7 @@ $ git clone https://github.com/OpenNuvoton/M480BSP.git
 ```
 
 # 開啟Sample code專案並設定與執行
+
 按照下面步驟開啟專案
 File->Import->General->Existing Projects into Workspace
 
