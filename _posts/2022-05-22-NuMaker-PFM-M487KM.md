@@ -100,6 +100,6 @@ Windows->Preference->C/C++->Build->Global Tools Paths->Toolchain folder:
 
 [cool](https://www.big-meter.com/opensource/en/61dad481dc76873900484665.html)
 
-# 結語
+## 結語
 這只是簡單的執行範例程式，對我來說只是剛開始小小的起步，希望這份簡易的doc可以幫助想接觸新唐開發板的朋友更容易上手。
 
