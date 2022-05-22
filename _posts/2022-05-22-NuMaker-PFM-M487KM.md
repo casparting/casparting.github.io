@@ -10,6 +10,7 @@ tags:
   - MCU
   - Nuvoton
   - M487
+  - SBC
 ---
 # 前言
 利用假日空閒時間我兼了外包案子，首先要先很感謝這位Steven資深工程師給我機會實做M487專案，這邊紀錄我開發的過程。
@@ -73,16 +74,10 @@ Select root directory請選擇此路徑
 
 在點選Finish
 
-
-
-```
-$ cd /home/caspar/local/gcc-arm-none-eabi-6-2017-q1-update/bin
-$ export PATH=$PATH:`pwd`
-$ echo $PATH
-/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/caspar/local/gcc-arm-none-eabi-6-2017-q1-update/bin
-```
+Project->Build ALL
 
 # Troubleshoot
+
 ## arm-none-eabi-g++ not found in PATH
 開啟後會發現出現錯誤訊息如圖所示
 ![nueclipse_compiler_not_found](/assets/images/nueclipse_compiler_not_found.png)
@@ -95,8 +90,10 @@ Windows->Preference->C/C++->Build->Global Tools Paths->Toolchain folder:
 請點兩下perference.ini讓它讀取
 
 # 想嘗試
+
 ## Vscode + OpenOCD + ARM Toolchain + Docker
-(https://www.big-meter.com/opensource/en/61dad481dc76873900484665.html)
+
+[cool](https://www.big-meter.com/opensource/en/61dad481dc76873900484665.html)
 
 
 ### 持續撰寫中。。。
