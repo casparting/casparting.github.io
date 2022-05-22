@@ -83,3 +83,6 @@ $ ./Logic-2.3.53-master.AppImage
 ![0x6a](/assets/images/0x6a.png)
 我們再去參考[ASCII的表](https://zh.wikipedia.org/wiki/ASCII)發現j字元所對應的十六進制數值就是6A如圖所示。
 ![ASCII_j](/assets/images/ascii_j.png)
+
+# 結語
+這邏輯分析儀可以到露天或蝦皮購買，三百塊以內卻可以用來分析很多data，像是UART, I2C等等，便宜又好玩^_^
