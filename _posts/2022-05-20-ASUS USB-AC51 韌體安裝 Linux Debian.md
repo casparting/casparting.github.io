@@ -33,8 +33,12 @@ deb http://security.debian.org/debian-security bullseye-security main contrib no
 deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
 ```
 最尾端有**non-free**
+
 # 開始安裝firmware-misc-nonfree套件
 ```
 # apt-get update;apt-get upgrade -y
 # apt-get install firmware-misc-nonfree -y
 ```
+
+# 結語
+希望快速簡單的步驟能幫助跟我遇到相同問題的朋友。
