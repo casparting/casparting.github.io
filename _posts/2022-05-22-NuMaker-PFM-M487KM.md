@@ -83,6 +83,7 @@ Project->Build ALL
 ### arm-none-eabi-g++ not found in PATH
 開啟後會發現出現錯誤訊息如圖所示
 ![nueclipse_compiler_not_found](/assets/images/nueclipse_compiler_not_found.png)
+
 請設定Global Tools Paths
 
 Windows->Preference->C/C++->Build->Global Tools Paths->Toolchain folder:
