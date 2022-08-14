@@ -66,18 +66,22 @@ Windows->Preference->C/C++->Build->Global Tools Paths->Toolchain folder:
 $ git clone https://github.com/OpenNuvoton/M480BSP.git
 ```
 
-## 開啟Sample code專案並設定與執行
+## 開啟Sample code專案並設定與編譯
 按照下面步驟開啟專案
 
 File->Import->General->Existing Projects into Workspace
 
 Select root directory請選擇此路徑
 
-/home/caspar/Project/M480BSP/SampleCode/NuMaker-PFM-M487/Heart_beating/GCC
+/home/caspar/Project/M480BSP/SampleCode/StdDriver/EMAC_lwiperf/GCC
 
 在點選Finish
 
 Project->Build ALL
+
+## 接上板子並燒入firmware
+
+根據Nuvoton官網說明，
 
 ## Troubleshoot
 ### arm-none-eabi-g++ not found in PATH
