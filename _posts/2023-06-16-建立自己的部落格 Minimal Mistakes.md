@@ -70,5 +70,14 @@ RUN gem install jekyll-gist jekyll-sitemap jekyll-paginate
 $ bundle exec jekyll serve
 ```
 ref: [https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
+## 其他參考資料
+[Jekyll History](https://jekyllrb.com/docs/history/#v3-9-3)
+
+## gem 安裝與解除安裝與指定版本
+```
+gem install jekyll
+gem uninstall jekyll
+gem install jekyll -v 3.9.2
+```
 ## 結語
 讓寫部落格文章也變成是在寫code吧~
