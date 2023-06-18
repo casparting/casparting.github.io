@@ -119,9 +119,21 @@ Ref: [How to SSH Into a Raspberry Pi for Remote Access](https://www.makeuseof.co
 
 ## 硬體周邊元件驗證
 我以公司板子為例，我們可以先從最簡單可以快速驗證的元件開始。
-例如HDMI、USB Port、Ethernet這種都是直接插入後透過terminal或桌面程式就可以知道硬體是否正常運作。
+例如HDMI、USB Port、Ethernet等等這種都是直接插入後透過terminal或桌面程式就可以知道硬體是否正常運作。
+* HDMI: 有無畫面輸出
+* USB: 是否接上滑鼠可以移動
+* Ethernet: 接上有通的網路線是否可以連上網
+
+但在這個驗證步驟時就遇到了USB與Ethernet不通的問題，前面有提到公司是base on CM4 IO板子下去改的，線路跟硬體元件不完全一樣，所以接下來我們進到下一節Troubleshooting來說明如何除錯找到root cause。
+
+板子還剩下LED燈與RS232和CAN BUS這種較不易測試的我們也一併在下一節Troubleshooting來說明如何除錯找到root cause。
 
 ## Troubleshooting
+### 找出USB與Ethernet不通的問題
 
+### RS232/RS485打通的方法
+
+### CAN BUS打通的方法
+待續...
 ## 結語
 硬體驗證就是這麼簡單~
