@@ -49,7 +49,6 @@ date: June 18, 2023
     - Yocto
     - NXP
     - Ti
-* 繼續精進的項目
     - Shell Script
     - Makefile
     - Python
