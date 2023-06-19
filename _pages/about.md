@@ -10,7 +10,7 @@ classes: wide
 date: June 18, 2023
 ---
 ## 簡介
-我熱愛不斷學習喜歡分享知識～我目前在新創公司擔任軟韌體工程師，主要開發工業電腦(IPC)、閘道器(Gateway)產品。
+我熱愛不斷學習喜歡分享知識～我目前在擔任軟韌體工程師，主要開發工業電腦(IPC)、閘道器(Gateway)產品。
 ## 我接觸過與學習過的專業知識
 * Hardware Schematic
 * Datasheet
