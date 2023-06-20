@@ -138,6 +138,117 @@ $ ls /dev/*spi*
 
 ref: [Raspberry Pi SPI and I2C Tutorial](https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial/all)
 
+接下來因為我們有用到SPI轉CAN Bus的晶片MCP251xFD，所以我們也來確認RPi的overlap是否有做好dtb。請輸入以下指令。
+```
+$ dtoverlay -a | grep mcp251
+  mcp2515
+  mcp2515-can0
+  mcp2515-can1
+  mcp251xfd
+```
+在輸入以下指令確認參數
+```
+$ dtoverlay -h mcp251xfd
+Name:   mcp251xfd
+
+Info:   Configures the MCP251XFD CAN controller family
+        For devices on spi1 or spi2, the interfaces should be enabled
+        with one of the spi1-1/2/3cs and/or spi2-1/2/3cs overlays.
+
+Usage:  dtoverlay=mcp251xfd,<param>=<val>
+
+Params: spi<n>-<m>              Configure device at spi<n>, cs<m>
+                                (boolean, required)
+
+        oscillator              Clock frequency for the CAN controller (Hz)
+
+        speed                   Maximum SPI frequence (Hz)
+
+        interrupt               GPIO for interrupt signal
+
+        rx_interrupt            GPIO for RX interrupt signal (nINT1) (optional)
+
+        xceiver_enable          GPIO for CAN transceiver enable (optional)
+
+        xceiver_active_high     specifiy if CAN transceiver enable pin is
+                                active high (optional, default: active low)
+```
+
+我們看到interrupt為GPIO interrupt的腳位，這時候就要去確認電路圖中CAN BUS interrupt的腳位是接到GPIO的腳位幾~這邊我是接到GPIO 25。
+而oscillator的設定可以參考mcp251xfd的datasheet如下圖所示。
+
+![MCP2517FD_oscillator](/assets/images/MCP2517FD_oscillator.png)
+
+oscillator有40, 20, 4 MHz可以選擇。
+
+在來的spi參數是要看SPI轉CAN Bus，是用到哪一個SPI Bus跟哪一個chip select，這邊我們是用SPI1 CS0所以參數就是spi1-0。
+接下來到/boot/config.txt檔內加入底下設定。
+```
+# ENABLE SPI to CAN FD controller
+dtoverlay=mcp251xfd,spi1-0,oscillator=20000000,interrupt=25
+```
+重新開機確認是否有出現can bus interface。下面看到can0即是。
+```
+$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether e4:5f:01:62:78:fd brd ff:ff:ff:ff:ff:ff
+3: can0: <NOARP,ECHO> mtu 16 qdisc noop state DOWN group default qlen 10
+    link/can
+4: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e4:5f:01:62:78:fe brd ff:ff:ff:ff:ff:ff
+    inet 192.168.84.28/24 brd 192.168.84.255 scope global dynamic noprefixroute wlan0
+       valid_lft 3327sec preferred_lft 2877sec
+    inet6 2401:e180:8832:ed70:6501:e74c:bed:64e2/64 scope global dynamic mngtmpaddr noprefixroute
+       valid_lft 6927sec preferred_lft 6927sec
+    inet6 fe80::2fce:86be:72a2:de91/64 scope link
+       valid_lft forever preferred_lft forever
+```
+
+ref: 
+
+[whats the difference between /dev/spidev0.0 and /dev/spidev0.1](https://forums.raspberrypi.com/viewtopic.php?t=277416)
+
+[MCP2515 SPI setup](https://forums.raspberrypi.com/viewtopic.php?t=149192)
+
+## CAN BUS 自我檢測方式
+測試之前不了解CAN Bus可以先參考[此連結](http://wiki.csie.ncku.edu.tw/embedded/CAN)。
+
+測試的方式可以先看你有幾個CAN Bus，如果只有一組CAN Bus可以用loop back的測試方式，直接Tx接Rx，也就是H、L相接。如果有兩組CAN Bus就H接H，L接L來互傳資料，要注意的是Tx與Rx都一定要接上線路讓他輸出與接收，否則會出現Bus-off的state暫時斷東訊。我們看底下突來簡單解釋。
+
+![CAN_note_state](/assets/images/CAN_note_state.png)
+
+上圖說明REC=Receive Error Counter，TEC=Transmit Error Counter，如果資料傳送不出去counter超過255，則會到Bus-off狀態，反之REC亦然。
+
+那我這邊先說明只有一組CAN Bus的自檢方式。請先把CAN Bus上的H與L短路。接下來輸入以下指令。
+啟用can 0並開啟loopback模式
+```
+$ sudo ip link set can0 down
+$ sudo ip link set can0 type can loopback on
+$ sudo ip link set can0 up type can bitrate 1000000
+```
+先運行can dump在背景等待接收傳送資料。
+```
+$ candump can0&
+```
+傳送資料出去會收到以下訊息
+```
+$ cansend can0 001#1122334455667788
+can0  001   [8]  11 22 33 44 55 66 77 88
+can0  001   [8]  11 22 33 44 55 66 77 88
+```
+關閉can 0與loopback模式
+```
+$ sudo ip link set can0 down
+$ sudo ip link set can0 type can loopback off
+$ sudo ip link set can0 up type can bitrate 1000000
+```
+ref: [CAN Bus in Linux](https://wiki.rdu.im/_pages/Application-Notes/Software/can-bus-in-linux.html)
 
 ## 結語
 硬體驗證就是這麼簡單有趣~
