@@ -219,7 +219,7 @@ ref:
 ## CAN BUS 自我檢測方式
 測試之前不了解CAN Bus可以先參考[此連結](http://wiki.csie.ncku.edu.tw/embedded/CAN)。
 
-測試的方式可以先看你有幾個CAN Bus，如果只有一組CAN Bus可以用loop back的測試方式，直接Tx接Rx，也就是H、L相接。如果有兩組CAN Bus就H接H，L接L來互傳資料，要注意的是Tx與Rx都一定要接上線路讓他輸出與接收，否則會出現Bus-off的state暫時斷東訊。我們看底下突來簡單解釋。
+測試的方式可以先看你有幾個CAN Bus，如果只有一組CAN Bus可以用loop back的測試方式，內部會直接Tx接Rx，也就是H、L相接。如果有兩組CAN Bus就H接H，L接L來互傳資料，要注意的是Tx與Rx都一定要接上線路讓他輸出與接收，不然就是使用loopback讓他內部晶片傳送資料，否則會出現Bus-off的state暫時斷東訊。我們看底下突來簡單解釋。
 
 ![CAN_note_state](/assets/images/CAN_note_state.png)
 
