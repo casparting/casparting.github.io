@@ -147,11 +147,11 @@ Ref:
 
 ## Troubleshooting
 ### RS232/RS485打通的方法
-請參考[RPi CM4 UART RS232 RS485 使用 啟用 開通](https://ithelp.ithome.com.tw/articles/10281021)這篇文章
+請參考[RPi CM4 UART RS232 RS485 使用 啟用 開通](https://casparting.github.io/embedded%20system/RPi-CM4-UART-RS232-RS485-%E4%BD%BF%E7%94%A8-%E5%95%9F%E7%94%A8-%E9%96%8B%E9%80%9A/)這篇文章
 ### 找出USB與Ethernet不通的問題
-請參考[RPi CM4 解決USB不通的問題 PCIE 轉 USB 3.0 uPD72020x](https://ithelp.ithome.com.tw/articles/10281021)這篇文章
+請參考[RPi CM4 解決USB不通的問題 PCIE 轉 USB 3.0 uPD72020x](https://casparting.github.io/embedded%20system/RPi-CM4-%E8%A7%A3%E6%B1%BAUSB%E4%B8%8D%E9%80%9A%E7%9A%84%E5%95%8F%E9%A1%8C-PCIE-%E8%BD%89-USB-3.0.-uPD72020x/)這篇文章
 ### CAN BUS打通的方法
-請參考[RPi CM4 SPI 轉 CAN Bus MCP251xFD 的使用 打通 CAN Bus 自檢](https://ithelp.ithome.com.tw/articles/10281021)這篇文章
+請參考[RPi CM4 SPI 轉 CAN Bus MCP251xFD 的使用 打通 CAN Bus 自檢](https://casparting.github.io/embedded%20system/RPi-CM4-SPI-%E8%BD%89-CAN-Bus-MCP251xFD-%E7%9A%84%E4%BD%BF%E7%94%A8-%E6%89%93%E9%80%9A-CAN-Bus-%E8%87%AA%E6%AA%A2/)這篇文章
 ### LED打通的方法
 請參考[RPI GPIO](https://ithelp.ithome.com.tw/articles/10281021)這篇文章
 ## 結語
