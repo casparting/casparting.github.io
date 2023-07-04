@@ -14,7 +14,7 @@ tags:
   - MCP251xFD
 ---
 ## 前言
-本篇內容將針對 MCP251xFD CAN Bus再傳送與接收資料時發生Bus off的可能的問題。
+本篇內容將針對 MCP251xFD CAN Bus在傳送與接收資料時發生Bus off可能的問題。
 ## 前提準備
 我們假設已經設定好CAN Bus dtoverlay，也上好linux kernel driver，請參考這篇文章->[RPi CM4 SPI 轉 CAN Bus MCP251xFD 的使用 打通 CAN Bus 自檢](https://casparting.github.io/embedded%20system/RPi-CM4-SPI-%E8%BD%89-CAN-Bus-MCP251xFD-%E7%9A%84%E4%BD%BF%E7%94%A8-%E6%89%93%E9%80%9A-CAN-Bus-%E8%87%AA%E6%AA%A2/)<-
 ## cansend資料發生bus off
@@ -32,7 +32,7 @@ $ dmesg|grep can
 [ 1324.714168] mcp251xfd spi1.0 can0: bus-off
 ```
 
-從上面的文章我們知道當接收或傳送錯誤次數達到一定的數量時state就會變成bus-off的狀態，要回到Normal狀態比需要重新上下電或是重新
+從上面的連結文章內我們知道當接收或傳送錯誤次數達到一定的數量時state就會變成bus-off的狀態，要回到Normal狀態比需要重新上下電或是重新up and down
 ```
 $ sudo ip link set can0 down
 ```

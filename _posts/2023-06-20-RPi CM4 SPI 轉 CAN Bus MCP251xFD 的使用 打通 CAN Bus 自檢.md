@@ -181,6 +181,8 @@ Params: spi<n>-<m>              Configure device at spi<n>, cs<m>
 
 oscillator有40, 20, 4 MHz可以選擇。
 
+這時候再去確認你的hardware電路圖是用幾MHz的石英振盪器。2023/07/04補充。
+
 在來的spi參數是要看SPI轉CAN Bus，是用到哪一個SPI Bus跟哪一個chip select，這邊我們是用SPI1 CS0所以參數就是spi1-0。
 接下來到/boot/config.txt檔內加入底下設定。
 ```
