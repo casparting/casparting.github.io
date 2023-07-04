@@ -1,7 +1,7 @@
 ---
 title: MCP251xFD CAN Bus Bus off 問題 自檢
 excerpt: >
-  這邊將介紹MCP251xFD為例，怎麼除厝解決CAN Bus Bus off的問題。
+  這邊將介紹MCP251xFD為例，怎麼除錯解決CAN Bus Bus off的問題。
 categories:
   - Embedded System
 tags:
