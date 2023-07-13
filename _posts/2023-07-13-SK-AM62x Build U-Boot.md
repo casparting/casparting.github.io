@@ -292,9 +292,9 @@ Ref: [How can I access my USB drive from my Windows Subsystem for Linux -- Ubunt
 
 cp一般使用不加特殊參數時，就會這樣複製~
 
-### Troubleshooting
+## Troubleshooting
 
-#### 編譯 U-Boot 出現的錯誤
+### 編譯 U-Boot 出現的錯誤
 編譯過程出現以下錯誤訊息
 ```
 =============================
@@ -325,7 +325,7 @@ rm out/soc/am62x/evm/sec-cfg.o out/soc/am62x/evm/pm-cfg.o out/soc/am62x/evm/rm-c
 make[1]: Leaving directory '/home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/k3-image-gen-2022.01'
 ```
 
-#### 執行 make clean 出現的錯誤
+### 執行 make clean 出現的錯誤
 執行make clean
 ```
 $ make clean
