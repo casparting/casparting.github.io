@@ -58,6 +58,8 @@ $ cd ti-processor-sdk-linux-am62xx-evm-08.06.00.42/
 $ make u-boot sysfw-image
 ```
 
+如果編譯上有錯誤請看下面的[Troubleshooting](#troubleshooting)
+
 編譯完之後主要會產生三個重要檔案tiboot3.bin、tispl.bin以及u-boot.img
 
 ```
