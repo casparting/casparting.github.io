@@ -295,7 +295,7 @@ cp一般使用不加特殊參數時，就會這樣複製~
 ## Troubleshooting
 
 ### 編譯 U-Boot 出現的錯誤
-編譯過程出現以下錯誤訊息
+編譯過程出現以下錯誤訊息 TI_SECURE_DEV_PKG must be set for HS
 ```
 =============================
 Building SYSFW Image
@@ -331,7 +331,7 @@ make[1]: Leaving directory '/home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06
 $ make clean
 ```
 
-出現底下錯誤
+出現底下錯誤 export: Files/dotnet/:/mnt/c/Program: bad variable name
 
 ```
 =================================
