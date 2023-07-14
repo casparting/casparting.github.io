@@ -166,5 +166,3 @@ $ sudo tools/l4t_flash_prerequisites.sh # For Debian-based Linux
 ```
 
 board name請參考[此連結](https://docs.nvidia.com/jetson/archives/r35.3.1/DeveloperGuide/text/IN/QuickStart.html#jetson-modules-and-configurations)表格內的Configuration欄位。
-
-## 結語
