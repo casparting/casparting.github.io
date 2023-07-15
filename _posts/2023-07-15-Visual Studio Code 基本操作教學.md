@@ -32,6 +32,9 @@ Windows：
 1. 請開啟資料夾輸入這個路徑 %APPDATA%\Code ，把Code整個資料夾刪除。
 2. 請開啟資料夾輸入這個路徑 %USERPROFILE%\\.vscode，把vscode刪除。
 
+補充：如何把介面改成英文
+開啟vs code，點選ctrl+shift+P，輸入display選擇en。
+
 ## 開啟 Visual Studio Code
 打開vs code一開始會詢問你是否要做初始設定~
 
@@ -39,7 +42,7 @@ Windows：
 
 ![vscode_getstart_theme](/assets/images/vscode_getstart_theme.png)
 
-詢問你是否要跟其他裝置做設定上的同步，這邊我們就不設定直接選擇下一步。
+第二個是詢問你是否要跟其他裝置做設定上的同步，這邊我們就不設定直接選擇下一步。
 
 第三個是告訴你可以嘗試使用vs code的命令，快捷鍵是Ctrl+Shift+P，這邊我會在後面進階的部分在說明一樣先選下一個。
 
@@ -85,12 +88,15 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 點選install然後也可以順便點進去看他的說明。
 這個套件包可以幫助我們debugging、程式補全等。
 
-安裝好之後，他出現提示視窗要我們按照步驟來做初始設定，第一步建立python檔案，我們已經準備好了，第二步設定python環境變數，這是讓我們可以直接在vs code中使用python直譯器，點選Create Environment，再點選上面第一個Venv是比較新的設定方式。如圖所示。
+<!-- 安裝好之後，他出現提示視窗要我們按照步驟來做初始設定，第一步建立python檔案，我們已經準備好了，第二步設定python環境變數，這是讓我們可以直接在vs code中使用python直譯器，點選Create Environment，再點選上面第一個Venv是比較新的設定方式。如圖所示。
 
 ![python_envirmenot_setting](/assets/images/python_envirmenot_setting.png)
 
 如果點完後他搜尋不到python就會出現Python is not installed, please download and install it.
 
+直接點選他，他會跳出Microsoft store讓你可以直接安裝python直譯器。點選取得。
+
+安裝好了再重複上述步驟直到出現python 3.11.x版本，而不再是Python is not installed。一樣點選。 -->
 
 
 ## Visual Studio Code基本操作
