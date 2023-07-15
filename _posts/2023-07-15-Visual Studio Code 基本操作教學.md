@@ -14,7 +14,7 @@ tags:
 程式語言已為職場上必備的基礎，在學習每種程式語言到最後會需要使用編輯器來編輯程式語言，而具有多功能的編輯器通常我們稱作整合開發環境Integrated Development Environment(IDE)，其最基本功能包刮專案開啟、撰寫、模擬、編譯、除錯與執行程式，使用IDE就是為了增加撰寫與除錯效率，那常見的IDE有哪些呢?簡單舉個例，支援C語言的IDE有CodeBlocks、Eclipse等，支援Java的IDE有Netbeans、Eclipse等，而下面談到的Visual Studio Code(vs code)為什麼這麼廣泛受工程師歡迎，個人覺得有四大原因，第一程式碼是開源的而且lightweight，多人維護相對穩健，事實上他只是一個程式編輯器(code editor)，並不是龐大的IDE，常見的程式編輯器還有Notepad++等。第二它可以用在很多不同的程式語言，不像傳統上面列的IDE大多是針對某個程式語言的開發環境。第三它有很多擴充包可以安裝，方便使用者自行客製化增加其他額外功能，像是程式補全、Debugging等，最後一個是他跨平台可以安裝在Windows, Linux, Mac OS。
 
 ## Visual Studio Code下載與安裝
-這邊以Windows為例子，請依照你的作業系統(OS)的不同下載不同的版本[連結在這邊](https://code.visualstudio.com/download)，這邊要注意他的版本有芬User Installer與System Installer如圖所示。
+這邊以Windows為例子，請依照你的作業系統(OS)的不同下載不同的版本[連結在這邊](https://code.visualstudio.com/download)，這邊要注意他的版本有分User Installer與System Installer如圖所示，請下載對應的版本。
 
 ![vscode_installer](/assets/images/vscode_installer.png)
 
@@ -22,8 +22,18 @@ tags:
 
 看個人需求選擇，如果您不知道我會建議後者System Setup。注意安裝過程都使用預設設定，除非瞭解其用意要自行調整之外。
 
+請注意建議新手安裝vs code的過程中不要更改設定，直接使用他建議的設定按下一步安裝完成。
+
+補充如果你已經安裝過vs code並且已經使用過了，可是現在想要重新學vs code基本操作，建議你把vs code記錄刪掉重新按照我下面的步驟學習~
+
+刪除記錄還原到預設值的方法~
+
+Windows：
+1. 請開啟資料夾輸入這個路徑 %APPDATA%\Code ，把Code整個資料夾刪除。
+2. 請開啟資料夾輸入這個路徑 %USERPROFILE%\\.vscode，把vscode刪除。
+
 ## 開啟 Visual Studio Code
-打開vs code一開始會詢問你是否要做設定~
+打開vs code一開始會詢問你是否要做初始設定~
 
 像是選擇vs code的主題顏色~如圖所示。
 
