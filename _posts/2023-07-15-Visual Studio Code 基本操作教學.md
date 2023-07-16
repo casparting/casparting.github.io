@@ -86,10 +86,21 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 
 按下鍵盤的Ctrl+Shift+P輸入命令python:create Environment，點選第一個新的Venv設定。
 
+如果你還沒裝好python直譯器，請點選後跳出Microsoft store請安裝python直譯器。
+
+安裝好python直譯器或你已經裝好了，在一次下指令會出現python3.11.x版本，看你裝哪一個版本顯示不同。
+![python_interpreter](/assets/images/python_interpreter.png)
+
+點選之後會開始執行，可以到下方的output看看他做了什麼事情。
+
+跑完後左邊會看到venv如下圖所示。
+![venv](/assets/images/venv.png)
+
+最後就可以開始撰寫python程式囉。
 
 ## Visual Studio Code插件安裝 擴充套件安裝
 
-這時候右下角也會出現提示視窗，詢問你是否要裝python擴充套件，接下來我就要講安裝擴充包來加強程式撰寫的一些輔助功能。
+當你建立py檔案或開啟時右下角也會出現提示視窗，詢問你是否要裝python擴充套件，接下來我就要講安裝擴充包來加強程式撰寫的一些輔助功能。
 
 這邊以使用Python程式語言為例，我依序介紹Python好用或常用的擴充套件，並說明其功能及如何使用。
 
@@ -107,19 +118,89 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 ![python_extension](/assets/images/python_extension.png)
 
 點選install然後也可以順便點進去看他的說明。
-這個套件包可以幫助我們debugging、程式補全等。
+這個套件包可以幫助我們
 
-安裝好之後，他出現提示視窗要我們按照步驟來做初始設定，第一步建立python檔案，我們已經準備好了，第二步設定python環境變數這步驟是，你的python如果需要一些額外的module，可以用這個來協助安裝，但要確認你的專案有requiements。這邊也先跳過。
+* 使用python直譯器執行python程式顯示結果
+* 除錯debugging
+* 程式命令補全
+
+安裝好之後，他出現提示視窗要我們按照步驟來做初始設定，第一步建立python檔案，我們已經準備好了，第二步設定python環境變數這步驟是，剛剛前面第二點已經說明過，如果你是使用別人的專案，可以在這邊仔入venv。
 
 第三個設定是執行，開啟一個python檔案後右上角有一個撥放的圖案，點選他開始執行程式。我們就以Add two sum為例子，按下撥放圖案執行後會跳出視窗問你是否允許python，請點選允許~
 
 執行後就會看到下方Terminal出現的執行結果~
 ![python_extrun_terminal_outputension](/assets/images/run_terminal_output.png)
 
+如果我們在檔案內輸入一些程式碼，python的擴充包公能，有命令補全(auto-completionx)功能，會推薦你可用的函示或變數名稱等，如圖所示。P.S.如果沒出現請重啟vs code。
+
+![python_command](/assets/images/python_command.png)
+
+再來要講怎麼除錯debugging，這邊要先說明一下debugging大致要分成幾個方法：
+* 下breakpoint中斷點
+* 單步執行step into
+* 全速執行run(到中斷點會停止)
+* 執行下一行程式不進入函式step over
+
+之後有多餘時間我在特別寫一篇除錯程式碼的常用方法~
+
+怎麼先假設你對上面列的有基本認知~
+
+那怎麼下breakpoint，有兩種方法，
+1. 滑鼠游標移動到第幾列程式碼數字的前方出現紅點，點左鍵。
+2. 打字的閃爍游標，在躍下中斷點那行，按下F9。
+
+如圖所示。
+
+![setbreakpoint](/assets/images/setbreakpoint.png)
+
+設定好中斷點之後，按下F5點選oython file開始執行程式與除錯。
+
+![run_debug](/assets/images/run_debug.png)
+
+如果不要除錯可以按Ctrl+F5。
+
+所以程式會執行到中斷點後停止，此時可以看當前程式的變數數值狀態等。
+
+![debug_info](/assets/images/debug_info.png)
+
+當然你也可以繼續step into或step over就點選下面的button。
+
+![debug_button](/assets/images/debug_button.png)
+
+你還可以到debug console輸入變數名稱。
+
+![debug_input_variable](/assets/images/debug_input_variable.png)
+
+最後一個部分~當我們寫python程式需要用到其他模組的時候，會import模組名稱，這時候如果你模組沒有安裝的話就無法執行程式。
+
+```
+import numpy as np
+
+msg = "Roll a dice"
+print(msg)
+
+print(np.random.randint(1,9))
+```
+
+如下圖所示。
+
+![import_numpy](/assets/images/import_numpy.png)
+
+請在這邊的terminal中輸入以下指令。
+```
+python.exe -m pip install numpy 
+```
+結果如下圖所示。
+
+![python_install_numpy](/assets/images/python_install_numpy.png)
+
+如果用到其他套件一樣用此指令方式安裝。
+
+到這邊已經可以快速開始撰寫python並且執行與除錯了~
+
+想要繼續深入學習請繼續往下看~~
+
 以上如果有任何問題歡迎下方留言~
-
-
-
 
 <!-- 安裝好之後，他出現提示視窗要我們按照步驟來做初始設定，第一步建立python檔案，我們已經準備好了，第二步設定python環境變數，這是讓我們可以直接在vs code中使用python直譯器，點選Create Environment，再點選上面第一個Venv是比較新的設定方式。如圖所示。
 
@@ -130,7 +211,6 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 直接點選他，他會跳出Microsoft store讓你可以直接安裝python直譯器。點選取得。
 
 安裝好了再重複上述步驟直到出現python 3.11.x版本，而不再是Python is not installed。一樣點選。 -->
-
 
 ## Visual Studio Code基本操作
 
