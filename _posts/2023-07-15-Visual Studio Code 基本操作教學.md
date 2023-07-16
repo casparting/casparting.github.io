@@ -35,7 +35,7 @@ Windows：
 補充：如何把介面改成英文
 開啟vs code，點選ctrl+shift+P，輸入display選擇en。
 
-## 開啟 Visual Studio Code
+## 開啟 Visual Studio Code 快速開始撰寫程式
 打開vs code一開始會詢問你是否要做初始設定~
 
 像是選擇vs code的主題顏色~如圖所示。
@@ -52,7 +52,15 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 
 剩下的Next section都是較進階的用法，我們就看到這邊就好，接下來將繼續vs code的基本操作。
 
-請準備好你的程式碼檔案，這邊我將以python為例子，下載[這個](https://github.com/geekcomputers/Python)python範例程式。
+下面分成兩個部分，請依照自己的需求觀看不同的介紹。
+
+1. 你已經有別人提供的程式碼或是已經確認耀基於別人某個程式碼繼續開發的，[請參考這開啟別人的專案或程式碼](./2023-07-15-Visual%20Studio%20Code%20基本操作教學.md#開啟別人的專案或程式碼)。
+
+2. 你是新手想自己新增一個新檔案來撰寫python檔案做練習，[請參考這新增一個新檔案並建立虛擬環境](./2023-07-15-Visual%20Studio%20Code%20基本操作教學.md#新增一個新檔案並建立虛擬環境)。
+
+### 開啟別人的專案或程式碼
+
+請準備好你要開啟的程式碼檔案，這邊我將以python為例子，下載[這個](https://github.com/geekcomputers/Python)python範例程式。
 
 下載方式請點選code選擇Download ZIP如圖所示。
 ![python_git_download_zip](/assets/images/python_git_download_zip.png)
@@ -65,11 +73,24 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 此時他會跳出一個訊息問你要不要信任作者~這邊很重要一定要點選左邊的信任，否則會少了一些功能。如圖所示。
 ![trust_author](/assets/images/trust_author.png)
 
-這時候會看到左邊有一個列表就是我們的資料夾內容，包括那些程式檔案或資料夾，我們往下拉至Add two numbers.py，點兩下把它開啟，便會看到中間出現他的程式碼。
+這時候會看到左邊有一個列表就是我們的資料夾內容，包括哪些程式檔案或資料夾，我們往下拉至Add two numbers.py，點兩下把它開啟，便會看到中間出現他的程式碼。
+
+### 新增一個新檔案並建立虛擬環境
+上面是直接開啟別人寫好的程式來執行，接下來我會說明如果自己開一個新檔案寫好程式如何執行與debug。
+
+請先關閉現在的程式資料夾File->Close Floder。
+
+開啟新檔案File->New File->輸入檔案名稱。如test.py。然後儲存到你想要儲存的路徑資料夾底下。建議要新增一個資料夾，把python存到新資料夾內。
+
+建立虛擬環境，因為python除了內建模組外，還有額外的模組，且還有分不同的版本，為了讓每一個python專案都要自己的特定版本的模組設定，所以建議可以建立虛擬環境。詳細虛擬環境說明可以參考[此連結](https://ithelp.ithome.com.tw/articles/10202335)。
+
+按下鍵盤的Ctrl+Shift+P輸入命令python:create Environment，點選第一個新的Venv設定。
+
+
+## Visual Studio Code插件安裝 擴充套件安裝
 
 這時候右下角也會出現提示視窗，詢問你是否要裝python擴充套件，接下來我就要講安裝擴充包來加強程式撰寫的一些輔助功能。
 
-## Visual Studio Code插件安裝 擴充套件安裝
 這邊以使用Python程式語言為例，我依序介紹Python好用或常用的擴充套件，並說明其功能及如何使用。
 
 介紹之前我們先來看看vs code提供那些擴充包，熱門排行榜有哪些~
@@ -87,6 +108,18 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 
 點選install然後也可以順便點進去看他的說明。
 這個套件包可以幫助我們debugging、程式補全等。
+
+安裝好之後，他出現提示視窗要我們按照步驟來做初始設定，第一步建立python檔案，我們已經準備好了，第二步設定python環境變數這步驟是，你的python如果需要一些額外的module，可以用這個來協助安裝，但要確認你的專案有requiements。這邊也先跳過。
+
+第三個設定是執行，開啟一個python檔案後右上角有一個撥放的圖案，點選他開始執行程式。我們就以Add two sum為例子，按下撥放圖案執行後會跳出視窗問你是否允許python，請點選允許~
+
+執行後就會看到下方Terminal出現的執行結果~
+![python_extrun_terminal_outputension](/assets/images/run_terminal_output.png)
+
+以上如果有任何問題歡迎下方留言~
+
+
+
 
 <!-- 安裝好之後，他出現提示視窗要我們按照步驟來做初始設定，第一步建立python檔案，我們已經準備好了，第二步設定python環境變數，這是讓我們可以直接在vs code中使用python直譯器，點選Create Environment，再點選上面第一個Venv是比較新的設定方式。如圖所示。
 
