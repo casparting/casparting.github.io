@@ -3,7 +3,7 @@ title: Visual Studio Code 零基礎 基本操作教學 撰寫 Python 快速上�
 excerpt: >
   快速使用Visual Studio Code來撰寫程式。
 categories:
-  - IDE
+  - Code Editor
 tags:
   - Visual Studio Code
   - Tutorial
@@ -204,7 +204,9 @@ python.exe -m pip install numpy
 
 到這邊已經可以快速開始撰寫python並且執行與除錯了~
 
-想要繼續深入學習請繼續看[vs code 基礎操作教學](./2023-07-16-Visual%20Studio%20Code%20python%20基本操作%20常用快捷鍵.md)以及[python 進階擴充套件安裝與使用](./2023-07-16-Visual%20Studio%20Code%20python%20進階擴充套件%20安裝%20使用%20介紹.md)~~
+想要繼續深入學習請繼續看[vs code 基礎操作教學]
+[Link to a post]({% link _posts/2023-07-16-Visual_Studio_Code_python_基本操作_常用快捷鍵.md %})
+以及[python 進階擴充套件安裝與使用](./2023-07-16-Visual%20Studio%20Code%20python%20進階擴充套件%20安裝%20使用%20介紹.md)~~
 
 以上如果有任何問題歡迎下方留言~
 

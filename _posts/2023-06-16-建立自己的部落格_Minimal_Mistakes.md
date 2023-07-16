@@ -79,5 +79,10 @@ gem install jekyll
 gem uninstall jekyll
 gem install jekyll -v 3.9.2
 ```
+
+## 相關文章
+* [VScode_Remote_Wsl_Docker_的使用]({% link _posts/2023-06-17-VScode_Remote_Wsl_Docker_的使用.md %})
+* [讓自己的部落格能被Google搜尋到]({% link _posts/2023-07-14-讓自己的部落格能被Google搜尋到.md %})
+
 ## 結語
 讓寫部落格文章也變成是在寫code吧~

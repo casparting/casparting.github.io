@@ -3,7 +3,7 @@ title: Visual Studio Code python 進階擴充套件 安裝 使用 介紹.md
 excerpt: >
   快速了解Visual Studio Code的基本操作方式。
 categories:
-  - IDE
+  - Code Editor
 tags:
   - Visual Studio Code
   - Tutorial

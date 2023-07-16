@@ -3,7 +3,7 @@ title: Visual Studio Code 基本操作教學 常用快捷鍵
 excerpt: >
   快速了解Visual Studio Code的基本操作方式。
 categories:
-  - IDE
+  - Code Editor
 tags:
   - Visual Studio Code
   - Tutorial

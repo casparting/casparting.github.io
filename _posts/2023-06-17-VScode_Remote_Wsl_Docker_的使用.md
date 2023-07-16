@@ -60,5 +60,14 @@ code .
 VS Code: Exec format error wsl
 ```
 請到家目錄把.vscode-server和.vscode-remote-containers刪除重新開機再執行code .
+
+這篇文章的方法我主要是用在撰寫部落格~
+[建立自己的部落格_Minimal_Mistakes]({% link _posts/2023-06-16-建立自己的部落格_Minimal_Mistakes.md %})
+
+## 其他相關vs code的文章
+* [Visual_Studio_Code_基本操作教學_python_快速上手]({% link _posts/2023-07-15-Visual_Studio_Code_基本操作教學_python_快速上手.md %})
+* [Visual_Studio_Code_python_基本操作_常用快捷鍵]({% link _posts/2023-07-16-Visual_Studio_Code_python_基本操作_常用快捷鍵.md %})
+* [Visual_Studio_Code_python_進階擴充套件_安裝_使用_介紹]({% link _posts/2023-07-16-Visual_Studio_Code_python_進階擴充套件_安裝_使用_介紹.md %})
+
 ## 結語
 讓vscode用起來更方便吧~

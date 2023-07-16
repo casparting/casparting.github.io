@@ -22,5 +22,11 @@ Saleae Logic USB 邏輯分析儀在量測SPI訊號時發現clock不規律 duty c
 ## 解決方式
 替換一個更好的邏輯分析儀
 
+## Troubleshooting
+
+其他還有關於Saleae Logic相關的問題如下：
+* [saleae_logic_usb_connect]({% link _posts/2022-05-21-saleae_logic_usb_connect.md %})
+* [saleae_logic_出現read_timeout問題]({% link _posts/2023-07-04-saleae_logic_出現read_timeout問題.md %})
+
 ## 結語
 快速簡單寫了解決方法，希望能幫助到遇到跟我一樣問題的朋友。
