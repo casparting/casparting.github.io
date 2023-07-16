@@ -64,8 +64,8 @@ layout: default
     {% endif %}
   </article>
 
-  {% assign maxRelated = 8 %}
-  {% assign minCommonTags =  2 %}
+  {% assign maxRelated = 12 %}
+  {% assign maxCommonTags =  10 %}
   {% assign maxRelatedCounter = 0 %}
 
   {% comment %}<!-- show customize related on a post page when `related: true` -->{% endcomment %}
@@ -73,6 +73,10 @@ layout: default
     <div class="page__related">
       <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
       <div class="grid__wrapper">
+      {% for ii in (1..maxCommonTags) %}
+        {% if maxRelatedCounter >= maxRelated %}
+          {% break %}
+        {% endif %}
         {% for post in site.posts %}
           {% assign sameTagCount = 0 %}
           {% assign commonTags = '' %}
@@ -87,15 +91,16 @@ layout: default
           {% endif %}
           {% endfor %}
 
-          {% if sameTagCount >= minCommonTags %}
+          {% assign currentCommonTags = maxCommonTags | minus: ii %}
+          {% if sameTagCount == currentCommonTags %}
             {% include archive-single.html type="grid" %}
             {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
             {% if maxRelatedCounter >= maxRelated %}
               {% break %}
             {% endif %}
           {% endif %}
-          <!-- {% include archive-single.html type="grid" %} -->
         {% endfor %}
+      {% endfor %}
       </div>
     </div>
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
