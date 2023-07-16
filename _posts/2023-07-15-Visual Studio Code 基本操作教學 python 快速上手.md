@@ -1,7 +1,7 @@
 ---
-title: Visual Studio Code 零基礎 基本操作教學 Python 常用插件 擴充包 推薦
+title: Visual Studio Code 零基礎 基本操作教學 撰寫 Python 快速上手 
 excerpt: >
-  快速了解Visual Studio Code的基本操作方式。
+  快速使用Visual Studio Code來撰寫程式。
 categories:
   - IDE
 tags:
@@ -98,7 +98,7 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 
 最後就可以開始撰寫python程式囉。
 
-## Visual Studio Code插件安裝 擴充套件安裝
+## Python插件安裝 擴充套件安裝
 
 當你建立py檔案或開啟時右下角也會出現提示視窗，詢問你是否要裝python擴充套件，接下來我就要講安裝擴充包來加強程式撰寫的一些輔助功能。
 
@@ -204,7 +204,7 @@ python.exe -m pip install numpy
 
 到這邊已經可以快速開始撰寫python並且執行與除錯了~
 
-想要繼續深入學習請繼續往下看~~
+想要繼續深入學習請繼續看[vs code 基礎操作教學](./2023-07-16-Visual%20Studio%20Code%20python%20基本操作%20常用快捷鍵.md)以及[python 進階擴充套件安裝與使用](./2023-07-16-Visual%20Studio%20Code%20python%20進階擴充套件%20安裝%20使用%20介紹.md)~~
 
 以上如果有任何問題歡迎下方留言~
 
@@ -218,118 +218,5 @@ python.exe -m pip install numpy
 
 安裝好了再重複上述步驟直到出現python 3.11.x版本，而不再是Python is not installed。一樣點選。 -->
 
-## Visual Studio Code基本操作
-
-程式碼的大鋼，讓你透過右邊這個小地圖，可以知道大概位於程式的哪個區段，並且可以案主滑鼠左鍵上下拖曳如圖所示~
-
-![minimap](/assets/images/minimap.png)
-
-另外圖中可以看到在if-else的區域之間有垂直的線條，表示這個區域的程式碼是屬於if(err)的內容~
-
-檔案與程式的路徑，讓你透過上面這個bar，知道檔案與程式的路徑如圖所示~
-
-![breadcrumbs](/assets/images/breadcrumbs.png)
-
-如果要關掉不顯示View->Apperance->Breadcrumbs點選~
-
-檔案瀏覽，按下最左邊的檔案圖案，會顯示你所開啟的程式檔案路徑(資料夾)內的所有檔案或資料夾，依階層的方式呈現~如圖所示~
-
-![explorer](/assets/images/explorer.png)
-
-此圖表示我開啟了CASPARTING.GITHUB.IO的目錄(資料夾)，而該目錄內有_data、_includes等資料夾，還有_config.yml、ads.txt等檔案~
-
-在這邊對資料夾或檔案按下滑鼠右鍵或左鍵~可以對其做下列處裡：
-* 建立、刪除與重新命名檔案或目錄
-* 拖曳移動檔案或資料夾
-* 瀏覽整個資料內容
-* 開啟終端機並直接到該路徑
-* 可以同時點選多個檔案或路徑做操作
-* 可以同時點選兩個檔案做compare selected
-
-補充說明我對_includes目錄按下右鍵，點選Open in integrated Terminal在下方會出現，終端機並進入到這個資料夾內~如圖所示~
-
-![open_intergrated_terminal](/assets/images/open_intergrated_terminal.png)
-
-
-
-### 常用好用的快捷鍵
-
-## Visual Studio Code額外插件安裝
-
-安裝完Python extension，只是讓你可以基本撰寫執行除錯python程式與命令補全。
-
-接下來我將介紹其他python相關更好用的extensions。
-
-### python formatting 自動縮排整理程式碼
-
-常見的python formatting有兩個，分別是autopep8和black，根據[這篇文章的描述](https://medium.com/mlearning-ai/python-auto-formatter-autopep8-vs-black-and-some-practical-tips-e71adb24aee1#:~:text=One%20of%20the%20major%20differences,only%20fixes%20the%20necessary%20parts.)，black看起來比較好看等因素。所以底下我就使用black。
-
-#### 安裝 Black Extension
-一樣我們點選左邊欄位的方塊圖，開啟extension搜尋。並在搜尋欄位輸入black。
-![python_black_extension](/assets/images/python_black_extension.png)
-
-
-安裝完之後重啟vs code，然後開啟python檔案，在空白處按下右鍵，Format Document With...選擇Black即可。
-
-#### 使用formatting整理程式碼
-
-按下快捷鍵shift+alt+f來整理程式碼。
-
-整理程式之前
-```
-some_relatively_long_statement_on_input=True
-another_relatively_long_statement_on_input=True
-
-def some_function():
-    if some_relatively_long_statement_on_input and another_relatively_long_statement_on_input:
-        a=1
-```
-
-
-整理程式之後
-```
-some_relatively_long_statement_on_input = True
-another_relatively_long_statement_on_input = True
-
-
-def some_function():
-    if (
-        some_relatively_long_statement_on_input
-        and another_relatively_long_statement_on_input
-    ):
-        a = 1
-```
-
-#### formatting的客製化設定
-
-我們對於程式撰寫有一定基礎後，程式為了讓每個人容易閱讀，我們會用有規則的方式來命名變數或含函式名稱，也會限制我們每一行程式碼幾個字數。
-
-根據[PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)的說明python撰寫程式的共同規則提到，每一行程式限制79字元。
-
-> Limit all lines to a maximum of 79 characters
-
-而我們使用的Black也提到符合PEP 8的[規範](https://github.com/psf/black#the-black-code-style)~
-
-> Black is a PEP 8 compliant opinionated formatter.
-
-但字數我們可以設定的更完美~設定成每一行79個字元~
-
-設定方式為File->Preference->Settings 搜尋black。
-
-找到Black-formatter:Args
-點選兩次Add Item，分別輸入--line-length和79，如圖所示。
-
-![python_black_line_length](/assets/images/python_black_line_length.png)
-
-Ref:
-* [VSCode: Setting line lengths in the Black Python code formatter](https://dev.to/adamlombard/vscode-setting-line-lengths-in-the-black-python-code-formatter-1g62)
-* [Python Black Code Formatter - Is there any way to apply automatic black formatting before commiting project to Github](https://stackoverflow.com/questions/71180810/python-black-code-formatter-is-there-any-way-to-apply-automatic-black-formatti)
-
-### python formatting 自動縮排整理程式碼
-
-## Visual Studio Code進階操作
-
-## Visual Studio Code結合WSL
-
 ## 結語
-讓部落格文章能公開在網路上被人搜尋到~
+幫助想要快速上手程式語言的新手~
