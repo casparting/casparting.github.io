@@ -1,5 +1,5 @@
 ---
-title: Jekyll GitHub Pages 優化 感興趣文章 相關文章 優先顯示最相關文章
+title: Jekyll GitHub Pages 優化 感興趣文章 相關文章 優先顯示最相關文章 推薦文章
 excerpt: >
   修改Jekyll的演算法讓文章最下方優先顯示與當頁文章最相關的文章，且如果最相關文章不足還會依序顯示次相關文章。
 categories:
