@@ -1,5 +1,5 @@
 ---
-title: GitHub tonken 過期 怎麼辦 password authentication was removed
+title: GitHub tonken 過期 怎麼辦 password authentication was removed command line
 excerpt: >
   快速了解怎麼更新GitHub token。
 categories:
@@ -44,6 +44,8 @@ token是你的token密碼
 ```
 git remote set-url origin https://casparting:token@github.com/casparting/casparting.github.io.git
 ```
+
+Ref: [How to update a GitHub access token via command line](https://stackoverflow.com/questions/70283510/how-to-update-a-github-access-token-via-command-line)
 
 ## 結語
 給自己的快速紀錄~
