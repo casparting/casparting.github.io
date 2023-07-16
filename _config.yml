@@ -113,7 +113,7 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:caspar.tg.su@gmail.com"
-    - label: "My Old Blog"
+    - label: "Google Blog"
       icon: "fas fa-fw fa-link"
       url: "http://clementyan.blogspot.com/"
     #- label: "Twitter"
