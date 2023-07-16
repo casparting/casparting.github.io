@@ -17,11 +17,14 @@ tags:
 我把他的code merge過來後變成下面這樣~
 [修改前後的比較](https://github.com/mmistakes/minimal-mistakes/commit/c5bc25ffffaa7050be866488a9092fcaccce9263)
 
-結果由這
+可以看到下圖，的前三篇文章都跟部落格文章毫無相關~
+而是vs code的文章~
 
 ![releated_posts_notags](/assets/images/releated_posts_notags.png)
 
-變成這樣
+
+
+修改程式碼後變成下面這樣，只顯示相關的部落格文章
 
 ![releated_posts_by_2_tags](/assets/images/releated_posts_by_2_tags.png)
 
@@ -34,9 +37,13 @@ tags:
 經過一番折騰後，我參考了[Jekyll Liquid語法](https://shopify.github.io/liquid/)，終於搞定優化了新的演算法~
 
 程式碼如右所示~
-[優化成是演算法](https://github.com/mmistakes/minimal-mistakes/commit/81e166acf4c61a55373e42bb672d136e878fb2cb)
+[優化程式演算法](https://github.com/mmistakes/minimal-mistakes/commit/81e166acf4c61a55373e42bb672d136e878fb2cb)
 
-現在我的文章會由最相關的文章優先顯示，並且不足12篇的話，繼續依序顯示次相關的文章，到最不相關的文章，直到文章顯示達到12篇就不顯示。
+現在我的文章會由最相關的文章優先顯示，並且不足8篇的話，繼續依序顯示次相關的文章，到最不相關的文章，直到文章顯示達到8篇就不顯示。
+
+如下圖所示
+
+![releated_posts_tags_complete](/assets/images/releated_posts_tags_complete.png)
 
 ## 結語
-邏輯就是這麼好玩~
+寫程式就是這麼好玩~
