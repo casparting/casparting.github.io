@@ -45,5 +45,9 @@ tags:
 
 ![releated_posts_tags_complete](/assets/images/releated_posts_tags_complete.png)
 
+## 發現小bug 下面的相關文章會顯示本頁的文章
+
+修正程式[在這邊](https://github.com/mmistakes/minimal-mistakes/commit/b03684cfc2f87ffae893833bbe31d0b3c622144c)~
+
 ## 結語
 程式邏輯就是這麼好玩~

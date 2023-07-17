@@ -117,5 +117,7 @@ SD Card的設定是Port=1 FS/Raw=0 1x01000 x代表don't care，你要1或0都可
 
 ![am62x_switch_sdcard_boot](/assets/images/am62x_switch_sdcard_boot.png)
 
+Ref: [SK-AM62: FAQ: How do I set the DIP switches to get a certain boot mode?](https://e2e.ti.com/support/processors-group/processors/f/processors-forum/1126872/faq-sk-am62-faq-how-do-i-set-the-dip-switches-to-get-a-certain-boot-mode)
+
 ## 結語
 研究原理探究跟因~

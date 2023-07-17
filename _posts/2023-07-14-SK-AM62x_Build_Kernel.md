@@ -197,16 +197,25 @@ $ make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- Image -j12
   OBJCOPY arch/arm64/boot/Image
 ```
 
-待續...
+## 安裝Linux Kernel
+```
+$ cd /home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/linux-5.10.168+gitAUTOINC+2c23e6c538-g2c23e6c538
+$ sudo cp arch/arm64/boot/Image <rootfs path>/boot
+```
 
+如果你跟我一樣使用WSL目前還沒有解決方法可以讓windows寫檔案到Linux檔案系統
 
-如果你跟我一樣使用WSL記得還要mount sd card
+所以只能把檔案複製起來放到linux系統中複製過去
+
+底下wsl mount sd card但只能讀到fat格式的partition
 ```
 $ cd /mnt
 $ sudo mkdir e
 $ sudo mount -t drvfs E: /mnt/e
 $ sudo DESTDIR=/mnt/e make linux_install
 ```
+
+使用[Ext2Read tool](https://sourceforge.net/projects/ext2read/)來從windows讀取linux檔案系統。(要用系統管理權限開啟) 這也只能讀取無法寫入。
 
 
 
