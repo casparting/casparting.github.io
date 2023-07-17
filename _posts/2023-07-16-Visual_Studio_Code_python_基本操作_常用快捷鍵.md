@@ -11,7 +11,7 @@ tags:
   - Extension
 ---
 ## Visual Studio Code基本操作
-繼上一篇[快速使用vs code撰寫python程式](./2023-07-15-Visual%20Studio%20Code%20基本操作教學%20python%20快速上手.md)讓新手能快速開始寫程式，接下來底下在說明其他vs code的基本操作。
+繼上一篇[快速使用vs code撰寫python程式](./2023-07-15-Visual_Studio_Code_基本操作教學_python_快速上手.md)讓新手能快速開始寫程式，接下來底下在說明其他vs code的基本操作。
 
 ### 程式碼大綱
 讓你透過右邊這個小地圖，可以知道大概位於程式的哪個區段，並且可以案主滑鼠左鍵上下拖曳如圖所示~
