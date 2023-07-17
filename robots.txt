@@ -3,4 +3,4 @@ layout: none
 ---
 User-agent: *
 Disallow:
-Sitemap: {{ site.url }}/sitemap.xml
+Sitemap: https://casparting.github.io//sitemap.xml
