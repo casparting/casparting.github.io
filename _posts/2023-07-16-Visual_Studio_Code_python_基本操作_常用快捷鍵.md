@@ -46,8 +46,28 @@ tags:
 
 ![open_intergrated_terminal](/assets/images/open_intergrated_terminal.png)
 
+### 搜尋整個資料夾
+
+我們看到下圖中第二個放大鏡的圖案
+
+![vscode_tutorial_bar](/assets/images/vscode_tutorial_bar.png)
+
+這功能很常用到也很重要，在搜尋整個專案時，可以找一些函示的名稱或變數名出現在那些檔案之中，有助於追蹤程式碼。
+
 ### 常用好用的快捷鍵
 
+|  基本快捷鍵  |    功能說明    |
+|----------|:-------------:|
+| ctrl + s |存檔|
+| ctrl + a |全選|
+| ctrl + f |當前檔案或路徑搜尋|
+| ctrl + shift + f |根目錄資料底下全部搜尋|
+
+|  進階快捷鍵  |    功能說明    |
+|----------|:-------------:|
+| ctrl + shift + p |vs code 命令列|
+| ctrl + F5 |執行程式|
+| F5 |執行程式並且除錯|
 
 有興趣想深入的還可以看我這篇[vs code python進階擴充套件 安裝 使用](./2023-07-16-Visual%20Studio%20Code%20python%20進階擴充套件%20安裝%20使用%20介紹.md)以及[Visual Studio Code結合WSL](./2023-06-17-VScode%20+%20Remote%20Wsl%20+%20Docker%20的使用.md)
 
