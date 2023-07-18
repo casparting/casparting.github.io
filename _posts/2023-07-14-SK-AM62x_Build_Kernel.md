@@ -23,13 +23,13 @@ P.S. 官方不建議使用虛擬機，這邊我是使用WSL
 ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin
 
 在下載等待的同時我們先安裝編譯source code所需要的一些套件，指令如下
-```
+```console
 $ sudo apt update
 $ sudo apt install build-essential bison flex libssl-dev libncurses-dev u-boot-tools
 ```
 
 安裝好後ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin程式也下載好後，接下來要執行它，如下指令。
-```
+```console
 $ chmod +x ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin
 $ ./ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin
 ```
@@ -53,7 +53,7 @@ Ref:
 
 ### 編譯 Kernel 使用 SDK Top Level Makefile
 請輸入以下指令
-```
+```console
 $ cd ti-processor-sdk-linux-am62xx-evm-08.06.00.42/
 $ make linux
 $ sudo DESTDIR=<sdcard-mounting-point> make linux_install
@@ -63,12 +63,12 @@ $ sudo DESTDIR=<sdcard-mounting-point> make linux_install
 ### 編譯 Kernel 使用 Kernel Top Level Makefile
 
 設定cross-compile到環境變數中~
-```
+```console
 $ export PATH=/home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/linux-devkit/sysroots/x86_64-arago-linux/usr/bin:$PATH
 ```
 
 先使用make clean來檢查編譯是否正常，也順便清除檔案
-```
+```console
 $ cd board-support/linux-5.10.168+gitAUTOINC+2c23e6c538-g2c23e6c538/
 $ make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- distclean
   CLEAN   arch/arm64/crypto
@@ -98,13 +98,13 @@ $ make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- distclean
 接下來我們可以從既有的defconfig檔案，選擇適合我們的開發平台，不同的defconfig有不同的driver設定，可能有支援USB網路驅動程式，有的沒有支援，我們是使用TI SK-AM62x E3板子，所以通常也會有相對應該板子的defconfig，如果板子是客製化的則需要進去make menuconfig來作客製化設定，開關驅動程式。
 
 使用特定的defconfig設定黨指令如下
-```
+```console
 $ make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- <defconfig>
 ```
 至於有那些defconfig可以選擇
 
 你可以打下面指令來尋找相關檔案
-```
+```console
 $ find ./ -name *_defconfig
 ./arch/mips/configs/cavium_octeon_defconfig
 ./arch/mips/configs/decstation_defconfig
@@ -141,12 +141,12 @@ platformName: am64xx-evm for AM64x, and am65xx-evm for AM65x 以此類推
 為了確認以及驗證是否正確，我們用剛剛的指令去find找看看有沒有這個檔案
 
 確認檔案路徑在底下
-```
+```console
 ./arch/arm64/configs/tisdk_am62xx-evm_defconfig
 ```
 
 所以我們輸入以下指令來載入tisdk_am62xx-evm_defconfig設定檔
-```
+```console
 make ARCH=[platform_chip] CROSS_COMPILE=[cross-compile-prefix] tisdk_am62xx-evm_defconfig
 ```
 這邊要注意platform_chip就是要看tisdk_am62xx-evm_defconfig檔案的路徑是位於arch內的什麼路徑
@@ -154,7 +154,7 @@ make ARCH=[platform_chip] CROSS_COMPILE=[cross-compile-prefix] tisdk_am62xx-evm_
 我們發現他在arm64裡面，所以使用的晶片是arm64的
 
 再來cross-compile-prefix我們要到/home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/linux-devkit/sysroots/x86_64-arago-linux/usr/bin底下ls確認compiler的名稱
-```
+```console
 $ ls
 2to3                                  automake-1.16       ifnames                 qemu-riscv64
 2to3-3.8                              autoreconf          ilk6x                   qemu-sh4
@@ -168,7 +168,7 @@ aarch64-none-linux-gnu-g++
 確認到compiler前戳名稱就是aarch64-none-linux-gnu-
 
 所以最後下達的指令以我的為例~
-```
+```console
 $ make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- tisdk_am62xx-evm_defconfig
 #
 # configuration written to .config
@@ -176,7 +176,7 @@ $ make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- tisdk_am62xx-evm_defconf
 ```
 
 客製化設定~請輸入以下指令
-```
+```console
 $ make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- menuconfig
 ```
 ![kernel_config_setting](/assets/images/kernel_config_setting.png)
@@ -184,7 +184,7 @@ $ make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- menuconfig
 進入GUI進行kernel的設定。
 
 開始編譯Linux Kernel，注意後面的-j[num]，建議num輸入你CPU有幾核心
-```
+```console
 $ make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- Image -j12
 ...
   AS      .tmp_vmlinux.kallsyms1.S
@@ -198,7 +198,7 @@ $ make ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- Image -j12
 ```
 
 ## 安裝Linux Kernel
-```
+```console
 $ cd /home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/linux-5.10.168+gitAUTOINC+2c23e6c538-g2c23e6c538
 $ sudo cp arch/arm64/boot/Image <rootfs path>/boot
 ```
@@ -208,7 +208,7 @@ $ sudo cp arch/arm64/boot/Image <rootfs path>/boot
 所以只能把檔案複製起來放到linux系統中複製過去
 
 底下wsl mount sd card但只能讀到fat格式的partition
-```
+```console
 $ cd /mnt
 $ sudo mkdir e
 $ sudo mount -t drvfs E: /mnt/e
@@ -223,7 +223,7 @@ $ sudo DESTDIR=/mnt/e make linux_install
 
 ### 安裝 Kernel 出現的錯誤
 安裝過程出現以下錯誤訊息 Input/output error
-```
+```console
 $ sudo DESTDIR=/mnt/e make linux_install
 =======================================
 Installing the Linux Kernel DTBs

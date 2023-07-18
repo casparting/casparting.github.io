@@ -25,7 +25,7 @@ tags:
 dtparam=spi=on
 ```
 或是下達底下指令
-```
+```console
 $ sudo raspi-config
 ```
 然後選擇3 Interface Options再選擇I4 SPI，選擇Yes Enable SPI。
@@ -33,7 +33,7 @@ $ sudo raspi-config
 兩個方法二擇一，設定完成後都要重新開機。
 
 重新開機後我們下達指令，正常來說會出現底下訊息
-```
+```console
 $ ls /dev/*spi*
 /dev/spidev0.0 /dev/spidev0.1
 ```
@@ -48,7 +48,7 @@ $ ls /dev/*spi*
 找到SP1和SPI1_CE0的腳位，在GPIO18~GPIO21的ALT4，一樣接下來我們要修改/boot/config.txt來使GPIO18~21腳位功能定義為SPI1。
 
 一樣我們先找尋設定SPI有哪些參數如下指令。
-```
+```console
 $ dtoverlay -a |grep spi
   anyspi
   enc28j60-spi2
@@ -83,7 +83,7 @@ $ dtoverlay -a |grep spi
   ssd1351-spi
 ```
 我們再下達該指令來繳解spi1-1cs與spi1-2cs的定義與差異
-```
+```console
 $ dtoverlay -h spi1-1cs
 Name:   spi1-1cs
 
@@ -100,7 +100,7 @@ Params: cs0_pin                 GPIO pin for CS0 (default 18 - BCM SPI1_CE0).
                                 userspace device node /dev/spidev1.0 (default
                                 is 'okay' or enabled).
 ```
-```
+```console
 $ dtoverlay -h spi1-2cs
 Name:   spi1-2cs
 
@@ -125,21 +125,21 @@ Params: cs0_pin                 GPIO pin for CS0 (default 18 - BCM SPI1_CE0).
 從原文我們可以得知，spi1-1cs這表代表sp1 bus, 開啟使用1個chip select，所以params只有cs0_pin可以使用，而spi1-2cs則代表sp1 bus, 開啟使用2個chip select分別是cs0與cs1，所以params就有cs0_pin與cs1_pin來設定他們的GPIO腳位。
 
 瞭解之後我們開啟/boot/config.txt，寫入以下內容開啟功能
-```
+```console
 # Change SPI Chip Select Pin
 dtoverlay=spi1-1cs,cs0_pin=18
 ```
 上面的意思表示開啟spi1 bus並使用一個cs，唯一的cs0他的pin腳位是用GPIO18(這邊端看電路圖怎麼接線的)
 
 重新開機再用底下指令確認是否有抓到spi1
-```
+```console
 $ ls /dev/*spi*
 ```
 
 ref: [Raspberry Pi SPI and I2C Tutorial](https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial/all)
 
 接下來因為我們有用到SPI轉CAN Bus的晶片MCP251xFD，所以我們也來確認RPi的overlap是否有做好dtb。請輸入以下指令。
-```
+```console
 $ dtoverlay -a | grep mcp251
   mcp2515
   mcp2515-can0
@@ -147,7 +147,7 @@ $ dtoverlay -a | grep mcp251
   mcp251xfd
 ```
 在輸入以下指令確認參數
-```
+```console
 $ dtoverlay -h mcp251xfd
 Name:   mcp251xfd
 
@@ -185,12 +185,12 @@ oscillator有40, 20, 4 MHz可以選擇。
 
 在來的spi參數是要看SPI轉CAN Bus，是用到哪一個SPI Bus跟哪一個chip select，這邊我們是用SPI1 CS0所以參數就是spi1-0。
 接下來到/boot/config.txt檔內加入底下設定。
-```
+```bash
 # ENABLE SPI to CAN FD controller
 dtoverlay=mcp251xfd,spi1-0,oscillator=20000000,interrupt=25
 ```
 重新開機確認是否有出現can bus interface。下面看到can0即是。
-```
+```console
 $ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -229,13 +229,13 @@ ref:
 
 那我這邊先說明只有一組CAN Bus的自檢方式。請先把CAN Bus上的H與L短路。接下來輸入以下指令。
 啟用can 0並開啟loopback模式
-```
+```console
 $ sudo ip link set can0 down
 $ sudo ip link set can0 type can loopback on
 $ sudo ip link set can0 up type can bitrate 1000000
 ```
 先運行can dump在背景等待接收傳送資料。
-```
+```console
 $ candump can0&
 ```
 傳送資料出去會收到以下訊息
@@ -245,7 +245,7 @@ can0  001   [8]  11 22 33 44 55 66 77 88
 can0  001   [8]  11 22 33 44 55 66 77 88
 ```
 關閉can 0與loopback模式
-```
+```console
 $ sudo ip link set can0 down
 $ sudo ip link set can0 type can loopback off
 $ sudo ip link set can0 up type can bitrate 1000000

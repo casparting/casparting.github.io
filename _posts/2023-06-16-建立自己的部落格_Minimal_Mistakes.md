@@ -24,7 +24,7 @@ tags:
 [https://stackoverflow.com/questions/75452016/installation-messed-up-with-ruby-unable-to-install-jekyll](https://stackoverflow.com/questions/75452016/installation-messed-up-with-ruby-unable-to-install-jekyll)
 
 因為出現底下Error
-```
+```console
 ERROR:  Error installing jekyll:
     The last version of sass-embedded (~> 1.54) to support your Ruby & RubyGems was 1.58.0. Try installing it with `gem install sass-embedded -v 1.58.0` and then running the current command again
     sass-embedded requires RubyGems version >= 3.3.22. The current RubyGems version is 3.1.2. Try 'gem update --system' to update RubyGems itself.
@@ -32,7 +32,7 @@ ERROR:  Error installing jekyll:
 從別人的解答中得知可能是ruby版本過舊，所以我修改dockerfile的ruby版本
 
 修改如下：
-```
+```console
 # Create a Jekyll container from a Ruby Alpine image
 
 # At a minimum, use Ruby 2.5 or later
@@ -66,7 +66,7 @@ RUN gem install jekyll-gist jekyll-sitemap jekyll-paginate
 [docker for ruby](https://hub.docker.com/_/ruby)
 ## 網頁Demo測試
 當環境建置好docker image build好之後，我們透過vscode進入到container，並執行底下指令來快速demo我們的網頁。為什麼要這樣Demo不直接git push上去，因為git push上去之後GitHub Pages需要時間編譯，不會馬上更新到你的blog。
-```
+```console
 $ bundle exec jekyll serve
 ```
 ref: [https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)

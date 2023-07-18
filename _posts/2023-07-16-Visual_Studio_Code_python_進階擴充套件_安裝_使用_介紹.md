@@ -32,7 +32,7 @@ tags:
 按下快捷鍵shift+alt+f來整理程式碼。
 
 整理程式之前
-```
+```python
 some_relatively_long_statement_on_input=True
 another_relatively_long_statement_on_input=True
 
@@ -43,7 +43,7 @@ def some_function():
 
 
 整理程式之後
-```
+```python
 some_relatively_long_statement_on_input = True
 another_relatively_long_statement_on_input = True
 

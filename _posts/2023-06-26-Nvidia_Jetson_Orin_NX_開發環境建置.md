@@ -23,29 +23,29 @@ Nvidia Jetson主要是用於AI邊緣或機器人的System on Module(SoM)，模�
 ![Nvidia_SDK_Manager_compatiblity](/assets/images/Nvidia_SDK_Manager_compatiblity.png)
 
 這邊假設你已經架設好Host PC，接下來下載[SDK Manager](https://developer.nvidia.com/sdk-manager)到Host PC，並下指令。
-```
+```console
 $ sudo dpkg -i sdkmanager_1.9.2-10899_amd64.deb
 ```
 
 在下底下指令安裝相依套件
-```
+```console
 $ sudo apt-get install -f
-```
+```console
 執行SDK Manager
-```
+```console
 $ sdkmanager
 ```
 
 執行時出現錯誤訊息如下
-```
+```console
 $ /opt/nvidia/sdkmanager/sdkmanager-gui: error while loading shared libraries: libatk-bridge-2.0.so.0: cannot open shared object file: No such file or directory
 ```
 請安裝以下套件
-```
+```console
 $ sudo apt-get install libatk-bridge2.0-0
 ```
 如果用出現libgtk library找不到，請安裝以下套件
-```
+```console
 $ sudp apt-get install gnome-terminal
 ```
 確認可以執行後請按照該網址來繼續下載與安裝SDK[Install Jetson Software with SDK Manager](https://docs.nvidia.com/sdk-manager/install-with-sdkm-jetson/index.html)
@@ -58,16 +58,16 @@ $ sudp apt-get install gnome-terminal
 下載Board Support Package(BSP)[此連結](https://developer.nvidia.com/embedded/jetson-linux-archive)選擇你的版本，下載Driver Package (BSP) Sources。
 
 解開BSP壓縮檔
-```
+```console
 $ tar -xfva public_sources.tbz2
 ```
 解開kernel source壓縮檔
-```
+```console
 $ cd Linux_for_Tegra/source/public
 $ tar –xjf kernel_src.tbz2
 ```
 編譯之前預先安裝的套件
-```
+```console
 $ sudo apt install build-essential bc
 ```
 下載cross-compiler Bootlin Toolchain gcc一樣在[此連結](https://developer.nvidia.com/embedded/jetson-linux-archive)中下載
@@ -76,21 +76,21 @@ $ sudo apt install build-essential bc
 也可以依照自喜喜好，但下面我會以此路徑為例。
 
 編譯前的環境變數設定
-```
+```console
 $ export CROSS_COMPILE_AARCH64_PATH=/opt/nvidia/toolchain/
 $ export CROSS_COMPILE_AARCH64=/opt/nvidia/toolchain/bin/aarch64-buildroot-linux-gnu-
 ```
 建立kernel編譯後的輸出路徑
-```
+```console
 $ mkdir kernel_out
 ```
 開始編譯
-```
+```console
 $ ./nvbuild.sh -o $PWD/kernel_out
 ```
 
 出現以下錯誤訊息
-```
+```console
 $ ./nvbuild.sh -o $PWD/kernel_out
 Building kernel-5.10 sources
 make: Entering directory '/home/caspar/nvidia/nsync/Original_source_code/kernel/kernel-5.10'
@@ -109,11 +109,11 @@ make: *** [Makefile:213: __sub-make] Error 2
 make: Leaving directory '/home/caspar/nvidia/nsync/Original_source_code/kernel/kernel-5.10'
 ```
 看到/bin/sh: 1: flex: not found，我們安裝套件如下指令。
-```
+```console
 $ sudo apt install flex
 ```
 
-```
+```console
 $ ./nvbuild.sh -o $PWD/kernel_out
 Building kernel-5.10 sources
 make: Entering directory '/home/caspar/nvidia/nsync/Original_source_code/kernel/kernel-5.10'
@@ -129,11 +129,11 @@ make: *** [Makefile:213: __sub-make] Error 2
 make: Leaving directory '/home/caspar/nvidia/nsync/Original_source_code/kernel/kernel-5.10'
 ```
 看到/bin/sh: 1: bison: not found，我們安裝套件如下指令。
-```
+```console
 $ sudo apt install bison
 ```
 出現找不到openssl header file問題
-```
+```console
   HOSTCC  scripts/kallsyms
   HOSTCC  scripts/sign-file
 /home/caspar/nvidia/nsync/Original_source_code/kernel/kernel-5.10/scripts/sign-file.c:25:10: fatal error: openssl/opensslv.h: No such file or directory
@@ -145,7 +145,7 @@ make[2]: *** Waiting for unfinished jobs....
   HOSTCC  scripts/sorttable
 ```
 請安裝openssl development package。
-```
+```console
 $ sudo apt-get install libssl-dev
 ```
 
@@ -157,11 +157,11 @@ $ sudo apt-get install libssl-dev
 * 高品質的USB-C/micro-USB線
 * Host PC使用NetworkManager
 * 關閉自動掛載儲存設備
-```
+```console
 $ systemctl stop udisks2.service
 ```
 * 安裝正確的相依套件
-```
+```console
 $ sudo tools/l4t_flash_prerequisites.sh # For Debian-based Linux
 ```
 

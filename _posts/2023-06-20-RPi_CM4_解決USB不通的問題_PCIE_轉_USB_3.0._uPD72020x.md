@@ -35,7 +35,7 @@ tags:
 所以我從電路圖比對得知，CM4 IO Board有一個PCIE插槽，在我公司的線路圖上刪除了PCIE插槽，而直接把PCIE轉USB的晶片放上去做連接轉換。
 
 那此時我們可以用lspci指令來看PCI是否有偵測到
-```
+```console
 # lspci |grep -i usb
 ```
 
@@ -44,7 +44,7 @@ ref: [usb 3.0 pci card not working](https://bbs.archlinux.org/viewtopic.php?id=1
 經過確認後是有發現USB3.0的PCIE，但是lsusb沒有抓到。
 
 有了大概的方向之後依照過去的經驗，有新增晶片元件，我們就要確認是否有上晶片的驅動程式，所以我開始看Linux kernel的config檔(驅動程式組態設定檔)，通常config可以在/boot/config-$kernel_version可以找到，而CM4我在這邊沒有看到config，所以我們用另一個方式如下。
-```
+```console
 $ sudo modprobe configs
 $ zcat /proc/config.gz > .config
 $ cat .config
@@ -56,12 +56,12 @@ ref:
 [What is /proc/config.gz?](https://blog.fpmurphy.com/2015/10/what-is-procconfig-gz.html)
 
 然後再使用grep搜尋文檔內的關鍵字
-```
+```console
 cat .config | grep PCI
 cat .config | grep XHCI
 ```
 經過確認後kernel option是有選到的，我們再來看一下kernel message如下指令
-```
+```console
 # dmesg |grep pci
 pci 0000:01:00.0: xHCI HW not ready after 5 sec (HC bug?) status = 0x801
 ```

@@ -24,13 +24,13 @@ P.S. 官方不建議使用虛擬機，這邊我是使用WSL
 ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin
 
 在下載等待的同時我們先安裝編譯source code所需要的一些套件，指令如下
-```
+```console
 $ sudo apt update
 $ sudo apt install build-essential bison flex libssl-dev libncurses-dev u-boot-tools
 ```
 
 安裝好後ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin程式也下載好後，接下來要執行它，如下指令。
-```
+```console
 $ chmod +x ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin
 $ ./ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin
 ```

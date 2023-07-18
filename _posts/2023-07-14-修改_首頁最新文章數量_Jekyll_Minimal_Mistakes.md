@@ -14,7 +14,7 @@ tags:
 在你的跟目錄裡面的_config.yml檔案內
 
 修改
-```
+```yaml
 # Outputting
 permalink: /:categories/:title/
 paginate: 10 # amount of posts to show

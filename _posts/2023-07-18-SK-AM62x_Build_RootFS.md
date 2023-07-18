@@ -19,7 +19,7 @@ tags:
 P.S. 官方不建議使用虛擬機，這邊我是使用WSL
 
 ## 進到RootFS路徑
-```bash
+```console
 $ cd /home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/filesystem
 $ ls
 tisdk-base-image-am62xx-evm.tar.xz         tisdk-docker-rootfs-image-am62xx-evm.tar.xz

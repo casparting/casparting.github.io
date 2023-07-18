@@ -24,7 +24,7 @@ Ref: [Debian官方套件網站](https://packages.debian.org/sid/firmware-misc-no
 ## 確認/etc/apt/sources.list 是否有加入 non-free
 請下達該指令
 
-```
+```console
 ~$ cat /etc/apt/sources.list
 ```
 
@@ -41,7 +41,7 @@ deb-src http://security.debian.org/debian-security bullseye-security main contri
 最尾端有**non-free**
 
 ## 開始安裝firmware-misc-nonfree套件
-```
+```console
 # apt-get update;apt-get upgrade -y
 # apt-get install firmware-misc-nonfree -y
 ```

@@ -31,12 +31,12 @@ tags:
 
 ## CAN Bus loopback mode設定
 請參考底下指令設定
-```
+```console
 $ sudo ip link set can0 type can loopback on
 $ sudo ip link set can0 up type can bitrate 1000000
 ```
 dump資料看看有沒有接收與傳送資料
-```
+```console
 $ sudo candump can0&
 ```
 傳送資料測試

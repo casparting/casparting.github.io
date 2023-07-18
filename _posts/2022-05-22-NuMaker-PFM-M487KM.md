@@ -39,7 +39,7 @@ Nuvoton官方網站有提供Keil/Eclipse的IDE solution，因我使用的Host是
 ![nueclipse](/assets/images/nueclipse.png)
 
 下載好後我參考了[此篇NuEclipse Guide](https://www.nuvoton.com/resource-files/UM_NuEclipse_EN_Rev1.01.014.pdf)安裝步驟與環境設定如下：
-```
+```console
 $ tar xfva NuEclipse_V1.01.018_Linux_Setup.tar.gz
 $ cd NuEclipse_V1.01.018_Linux_Setup/
 $ ./install.sh 
@@ -47,7 +47,7 @@ $ ./install.sh
 請注意執行install.sh時，使用一般使用者權限前面不加sudo，在這支install.sh裡面已經有sudo的指令了，所以執行過程會要你輸入密碼請記得！
 
 安裝好之後執行NuEclipse如下指令：
-```
+```console
 $ cd eclipse/
 $ ./eclipse
 ```
@@ -62,7 +62,7 @@ Windows->Preference->C/C++->Build->Global Tools Paths->Toolchain folder:
 ### M480BSP
 請到[此連結](https://github.com/OpenNuvoton/M480BSP)下載M480BSP，裡面有很多sample code，請[參考此文件](https://github.com/OpenNuvoton/M480BSP/blob/master/Readme.pdf)，指令如下：
 
-```
+```console
 $ git clone https://github.com/OpenNuvoton/M480BSP.git
 ```
 

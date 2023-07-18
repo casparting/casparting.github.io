@@ -187,7 +187,7 @@ print(np.random.randint(1,9))
 ![import_numpy](/assets/images/import_numpy.png)
 
 請在這邊的terminal中輸入以下指令。
-```
+```console
 python.exe -m pip install numpy 
 ```
 結果如下圖所示。

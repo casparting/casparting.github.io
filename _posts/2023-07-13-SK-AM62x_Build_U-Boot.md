@@ -23,13 +23,13 @@ P.S. 官方不建議使用虛擬機，這邊我是使用WSL
 ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin
 
 在下載等待的同時我們先安裝編譯source code所需要的一些套件，指令如下
-```
+```console
 $ sudo apt update
 $ sudo apt install build-essential bison flex libssl-dev libncurses-dev u-boot-tools
 ```
 
 安裝好後ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin程式也下載好後，接下來要執行它，如下指令。
-```
+```console
 $ chmod +x ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin
 $ ./ti-processor-sdk-linux-am62xx-evm-08.06.00.42-Linux-x86-Install.bin
 ```
@@ -53,7 +53,7 @@ Ref:
 
 ### 編譯 U-Boot 使用 SDK Top Level Makefile
 請輸入以下指令
-```
+```console
 $ cd ti-processor-sdk-linux-am62xx-evm-08.06.00.42/
 $ make u-boot sysfw-image
 ```
@@ -62,12 +62,12 @@ $ make u-boot sysfw-image
 
 編譯完之後主要會產生三個重要檔案tiboot3.bin、tispl.bin以及u-boot.img
 
-```
+```console
 ~/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/k3-image-gen-2022.01 $ ls -l tiboot3*
 -rw-r--r-- 1 caspar caspar 335035 Jul 13 13:51 tiboot3-am62x-hs-fs-evm.bin
 lrwxrwxrwx 1 caspar caspar     27 Jul 13 13:51 tiboot3.bin -> tiboot3-am62x-hs-fs-evm.bin
 ```
-```
+```console
 ~/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/u-boot_build/a53$ ls -l tispl.bin u-boot.img
 -rw-r--r-- 1 caspar caspar 961988 Jul 13 13:51 tispl.bin
 -rw-r--r-- 1 caspar caspar 894604 Jul 13 13:51 u-boot.img
@@ -76,7 +76,7 @@ lrwxrwxrwx 1 caspar caspar     27 Jul 13 13:51 tiboot3.bin -> tiboot3-am62x-hs-f
 ### 編譯 U-Boot 使用 U-Boot Top Level Makefile
 
 SDK載下來之後，U-Boot的source code放在這底下
-```
+```console
 ~/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support$ cd u-boot-2021.01+gitAUTOINC+2ee8efd654-g2ee8efd654/
 ```
 底下你會看到UBOOT_DIR/即代表上面這個U-Boot source code的路徑
@@ -85,20 +85,20 @@ SDK載下來之後，U-Boot的source code放在這底下
 
 設定toolchain的路徑到環境變數中，稍後在編譯的時候才找的到cross-compile。
 
-```
+```console
 $ export PATH=$PATH:<SDK_INSTALL_DIR>/linux-devkit/sysroots/x86_64-arago-linux/usr/bin
 $ export TI_SECURE_DEV_PKG=<SDK_INSTALL_DIR>/board-support/core-secdev-k3
 ```
 
 也就是
 
-```
+```console
 $ export PATH=$PATH:/home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/linux-devkit/sysroots/x86_64-arago-linux/usr/bin
 $ export TI_SECURE_DEV_PKG=/home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/core-secdev-k3
 ```
 
 #### 編譯 R5 Image
-```
+```console
 $ cd <UBOOT_DIR>/
 $ export ARCH=arm
 $ export CROSS_COMPILE=arm-none-linux-gnueabihf-
@@ -110,14 +110,14 @@ $ make SOC=<SOC> SOC_TYPE=<SOC_TYPE> SBL=<UBOOT_DIR>/build/r5/spl/u-boot-spl.bin
 SOC是am62x SOC_TPYE是gp
 
 結果如下
-```
+```console
 $ make SOC=am62x SOC_TYPE=gp SBL=/home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/u-boot-2021.01+gitAUTOINC+2ee8efd654-g2ee8efd654/build/r5/spl/u-boot-spl.bin SYSFW_DIR=../prebuilt-images
 ./scripts/gen_x509_combined_cert.sh -b /home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/u-boot-2021.01+gitAUTOINC+2ee8efd654-g2ee8efd654/build/r5/spl/u-boot-spl.bin -l 0x43c00000 -s ../prebuilt-images/ti-fs-firmware-am62x-gp.bin -m 0x40000 -c "" -d out/soc/am62x/evm/combined-tifs-cfg.bin -n 0x67000 -t out/soc/am62x/evm/combined-dm-cfg.bin -y 0x43c3a800 -k ti-degenerate-key.pem -r 1 -o tiboot3-am62x-gp-evm.bin
 Certificate being generated :
 SUCCESS: Image tiboot3-am62x-gp-evm.bin generated.
 ```
 #### 編譯 AM64 Image
-```
+```console
 $ cd <UBOOT_DIR>/
 $ export ARCH=arm
 $ export CROSS_COMPILE=aarch64-none-linux-gnu-
@@ -248,19 +248,19 @@ make[1]: Leaving directory '/home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06
 
 一樣編譯完後的檔案~
 tiboot3.bin
-```
+```console
 ~/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/k3-image-gen-2022.01 $ ls -l tiboot3*
 -rw-r--r-- 1 caspar caspar 332446 Jul 13 15:57 tiboot3-am62x-gp-evm.bin
 -rw-r--r-- 1 caspar caspar 335035 Jul 13 13:51 tiboot3-am62x-hs-fs-evm.bin
 lrwxrwxrwx 1 caspar caspar     24 Jul 13 15:57 tiboot3.bin -> tiboot3-am62x-gp-evm.bin
 ```
 tispl.bin
-```
+```console
 ~/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/u-boot-2021.01+gitAUTOINC+2ee8efd654-g2ee8efd654/build/arm64$ ls -l tispl.bin
 -rw-r--r-- 1 caspar caspar 340408 Jul 13 16:05 tispl.bin
 ```
 u-boot.img
-```
+```console
 ~/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/u-boot-2021.01+gitAUTOINC+2ee8efd654-g2ee8efd654/build/arm64$ ls -l u-boot.img
 -rw-r--r-- 1 caspar caspar 894604 Jul 13 16:04 u-boot.img
 ```
@@ -269,7 +269,7 @@ u-boot.img
 接下來把上面編譯好的三個檔案依序放到sd card的/boot裡面即可
 
 因為我是用WSL所以還需要多一個小步驟~
-```
+```console
 $ cd /mnt
 $ sudo mkdir e
 # sudo mount -t drvfs E: /mnt/e
@@ -278,7 +278,7 @@ $ sudo mkdir e
 然後依序把檔案copy到/mnt/e裡面~
 
 最後記得要
-```
+```console
 $ sudo umount /mnt/e
 ```
 
@@ -308,12 +308,12 @@ make: *** [sysfw-image] Error 2
 ```
 
 請輸入以下指令
-```
+```console
 $ export TI_SECURE_DEV_PKG=/home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06.00.42/board-support/core-secdev-k3
 ```
 
 再make一次
-```
+```console
 $ make u-boot sysfw-image
 ```
 
@@ -327,7 +327,7 @@ make[1]: Leaving directory '/home/caspar/ti-processor-sdk-linux-am62xx-evm-08.06
 
 ### 執行 make clean 出現的錯誤
 執行make clean
-```
+```console
 $ make clean
 ```
 
@@ -360,7 +360,7 @@ export PATH=$SDK_PATH_NATIVE/usr/bin:$SDK_PATH_NATIVE/usr/bin/aarch64-linux:$PAT
 ```
 
 我們看一下PATH裡面的內容
-```
+```console
 $ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/usbipd-win/:/mnt/d/Users/caspar_su/AppData/Local/Microsoft/WindowsApps:/mnt/d/Users/caspar_su/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
 ```
@@ -369,7 +369,7 @@ $ echo $PATH
 網路上搜尋找到[相關資料](https://gist.github.com/ilbunilcho/4280bd55a10cefef75e74986b6bff936)移除windows path from wsl
 
 編輯wsl.conf
-```
+```console
 $ sudo vi /etc/wsl.conf
 ```
 輸入以下內容
@@ -380,11 +380,11 @@ appendWindowsPath = false
 存檔關閉。
 
 重啟wsl。請開啟PowerShell輸入以下指令。
-```
+```powershell
 > wsl.exe --shutdown
 ```
 再打開wsl確認一次PATH環境變數
-```
+```console
 $ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/snap/bin
 ```

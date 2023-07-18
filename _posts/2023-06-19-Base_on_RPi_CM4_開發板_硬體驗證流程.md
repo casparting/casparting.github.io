@@ -128,7 +128,7 @@ Ref: [How to SSH Into a Raspberry Pi for Remote Access](https://www.makeuseof.co
 * Ethernet: 接上有通的網路線是否可以連上網
 
 但在這個驗證步驟時就遇到了USB與Ethernet不通的問題，這時候我們看一下kernel message跟使用usb tool來看usb device狀態。
-```
+```console
 # dmesg |grep -i USB
 # lsusb
 ```

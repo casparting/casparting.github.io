@@ -22,7 +22,7 @@ Ref: [99-saleae-logic-libusb.rules](https://github.com/keesj/saleae-logic-libusb
 
 將檔案下載下來後放置此路徑底下
 
-```
+```console
 # mv 99-saleae-logic-libusb.rules /etc/udev/rules.d/
 ```
 

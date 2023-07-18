@@ -32,7 +32,7 @@ tags:
 請在Host端安裝以下軟體。
 ### minicom
 &emsp;&emsp;在終端機使用超級使用者權限下達下面指令。
-```
+```console
 # apt-get install minicom -y
 ```
 ### Saleae Logic Analyzer Software
@@ -41,12 +41,12 @@ tags:
 
 給予執行權限
 
-```
+```console
 $ chmod +x Logic-2.3.53-master.AppImage
 ```
 開始執行
 
-```
+```console
 $ ./Logic-2.3.53-master.AppImage
 ```
 你的邏輯分析儀USB接上Host端

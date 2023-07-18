@@ -19,11 +19,11 @@ tags:
 我們假設已經設定好CAN Bus dtoverlay，也上好linux kernel driver，請參考這篇文章->[RPi CM4 SPI 轉 CAN Bus MCP251xFD 的使用 打通 CAN Bus 自檢](https://casparting.github.io/embedded%20system/RPi-CM4-SPI-%E8%BD%89-CAN-Bus-MCP251xFD-%E7%9A%84%E4%BD%BF%E7%94%A8-%E6%89%93%E9%80%9A-CAN-Bus-%E8%87%AA%E6%AA%A2/)<-
 ## cansend資料發生bus off
 該設定的都設定了，但是發現CAN Bus在send資料收不到
-```
+```console
 $ cansend can0 001#112233445566778
 ```
 用dmesg去看
-```
+```console
 $ dmesg|grep can
 [    6.769105] mcp251xfd spi1.0 can0: MCP2517FD rev0.0 (-RX_INT -PLL +MAB_NO_WARN +CRC_REG +CRC_RX +CRC_TX +ECC -HD o:20.00MHz c:20.00MHz m:20.00MHz rs:8.50MHz es:8.33MHz rf:8.50MHz ef:8.33MHz) successfully initialized.
 [  985.791141] IPv6: ADDRCONF(NETDEV_CHANGE): can0: link becomes ready
@@ -33,11 +33,11 @@ $ dmesg|grep can
 ```
 
 從上面的連結文章內我們知道當接收或傳送錯誤次數達到一定的數量時state就會變成bus-off的狀態，要回到Normal狀態比需要重新上下電或是重新up and down
-```
+```console
 $ sudo ip link set can0 down
 ```
 在
-```
+```console
 $ sudo ip link set can0 up type can bitrate 1000000
 ```
 
