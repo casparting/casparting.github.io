@@ -120,18 +120,24 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 點選install然後也可以順便點進去看他的說明。
 這個套件包可以幫助我們
 
-* 使用python直譯器執行python程式顯示結果
-* 除錯debugging
-* 程式命令補全
+1. 使用python直譯器執行python程式顯示結果
+2. 除錯debugging
+3. 程式命令補全
 
-安裝好之後，他出現提示視窗要我們按照步驟來做初始設定，第一步建立python檔案，我們已經準備好了，第二步設定python環境變數這步驟是，剛剛前面第二點已經說明過，如果你是使用別人的專案，可以在這邊仔入venv。
+安裝好之後，他出現提示視窗要我們按照步驟來做初始設定，第一步建立python檔案，我們已經準備好了，第二步設定python直譯器設定，[剛剛前面第二點已經說明過](#新增一個新檔案並建立虛擬環境)，如果你是使用別人的專案，可以在這邊載入venv。
 
-第三個設定是執行，開啟一個python檔案後右上角有一個撥放的圖案，點選他開始執行程式。我們就以Add two sum為例子，按下撥放圖案執行後會跳出視窗問你是否允許python，請點選允許~
+![python_init_setup](/assets/images/python_init_setup.png)
+
+第三個設定是執行與除錯，開啟一個python檔案後(File->Open File)右上角有一個播放的圖案
+
+![python_run](/assets/images/python_run.png)
+
+點選他開始執行程式。我們就以Add two sum為例子，按下播放圖案執行後Windows會跳出視窗問你是否允許python直譯器，請點選允許~
 
 執行後就會看到下方Terminal出現的執行結果~
 ![python_extrun_terminal_outputension](/assets/images/run_terminal_output.png)
 
-如果我們在檔案內輸入一些程式碼，python的擴充包公能，有命令補全(auto-completionx)功能，會推薦你可用的函示或變數名稱等，如圖所示。P.S.如果沒出現請重啟vs code。
+如果我們在檔案內輸入一些程式碼，python的擴充包功能，有命令補全(auto-completionx)功能，會推薦你可用的函示或變數名稱等，如圖所示。P.S.如果沒出現請重啟vs code。
 
 ![python_command](/assets/images/python_command.png)
 
@@ -153,7 +159,7 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 
 ![setbreakpoint](/assets/images/setbreakpoint.png)
 
-設定好中斷點之後，按下F5點選oython file開始執行程式與除錯。
+設定好中斷點之後，按下F5點選python file開始執行程式與除錯。
 
 ![run_debug](/assets/images/run_debug.png)
 
@@ -167,7 +173,7 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 
 ![debug_button](/assets/images/debug_button.png)
 
-你還可以到debug console輸入變數名稱。
+你還可以到debug console輸入變數名稱，他就會印出來。
 
 ![debug_input_variable](/assets/images/debug_input_variable.png)
 
