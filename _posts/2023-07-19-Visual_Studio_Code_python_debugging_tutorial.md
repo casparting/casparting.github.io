@@ -16,7 +16,7 @@ tags:
 
 在使用工具前下面先介紹程式錯誤分成那些錯誤~~
 
-另外如想知道其他基本跟進階教學可以[看這邊](https://casparting.github.io/tags/#visual-studio-code)
+另外如想知道其他基本跟進階vs code教學可以[看這邊](https://casparting.github.io/tags/#visual-studio-code)
 
 ## 程式錯誤有哪些?
 在了解怎麼找程式錯誤或問題之前，我們要先了解程式基本上有分成哪幾種錯誤類型?
