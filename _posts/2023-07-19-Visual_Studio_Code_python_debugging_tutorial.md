@@ -12,11 +12,11 @@ tags:
   - Debugging
 ---
 ## 前言
-這邊主要是給新手們知道如呵善用工具找出程式碼錯誤的地方~
+這邊主要是給新手們知道如何善用工具找出程式碼錯誤的地方~
 
 在使用工具前下面先介紹程式錯誤分成那些錯誤~~
 
-另外如想知道其他基本會進接教學可以[看這邊](https://casparting.github.io/tags/#visual-studio-code)
+另外如想知道其他基本跟進階教學可以[看這邊](https://casparting.github.io/tags/#visual-studio-code)
 
 ## 程式錯誤有哪些?
 在了解怎麼找程式錯誤或問題之前，我們要先了解程式基本上有分成哪幾種錯誤類型?
@@ -81,6 +81,7 @@ print('The sum of', num1, 'and', num2, 'is', sum)
 ## 開始除錯 找錯誤 找問題 Debug
 當我們新手接手別人的專案或程式，天啊!上百行上千行的程式，學長姊突然丟給我要我解決錯誤問題~我可能看了天荒地老還找不出問題點~
 
+### 基本除錯工具
 利用debugging來協助加速找出錯誤：
 
 我們可以先從程式的結果來判斷程式可能出現的錯誤點在哪邊，對症下藥打中斷點~
@@ -198,6 +199,51 @@ Step into就是在一步一步執行程式時，遇到函式會進入到函是�
 
 最後Restart與Stop就如同字面上的意思很好理解~
 
+# 其他除錯工具
+
+最下面我們除了會看Terminal輸出的結果外，在進入debugging之後你還可以進到下面的debug console，臨時輸入一些你想知道的訊息或運算式~如圖所示。
+
+![python_debug_console](/assets/images/python_debug_console.png)
+
+如果細心的朋友應該還會發現，在Debugging開始跑的時候，左邊上方除了有變數數值可以看之外，應該還有看到中間有一個Watch~
+
+Watch可以讓你先觀察還沒在上方出現的變數數值，甚至可以打一個運算式(a+b)或判別式(a and b)，他會把答案算出來顯示出來。如圖所示。
+
+![python_watch](/assets/images/python_watch.png)
+
+最後我要講一個很重要的call stack~
+
+call stack會顯示你程式進入那些函式~並且會依照優先進入哪個函式，按順序顯示出來!!
+
+例如我今天又把程式改寫成底下這樣~
+
+```python
+def add(num1,num2):
+    sum=int(num1)+int(num2)
+    sum=int(num1)+int(num2)
+    show(sum)
+    return sum
+
+def show(message):
+    print(message)
+
+numa = 2
+numb = 3
+
+print('The sum is', add(numa,numb))
+print('The sum is', add(numa,numb))
+```
+從上面的程式中可以看到有一個函式add()，add()裡面還有另一個函式show()，當我程式執行到print('The sum is', add(numa,numb))，用剛剛前面提到的step into進入add()，持續下step into到他又進入了show()函式~這時候程式停在print(message)~我們來看call stack呈現什麼~
+
+![python_call_stack](/assets/images/python_call_stack.png)
+
+圖中我們可以看到~最下面是\<module\>往上是add，再來是show~他的意思就是說我現在程式停在的位置，是由最外層的module進入到add()再進去到show()。
+
+為什麼我說這個很重要!~今天如果程式非常龐大，函式呼叫很多次，跳來跳去你會不好知道現在這個函式是由哪個最外層函式呼叫的，這時候你直接下中斷點在最底層最裡面的函式show()，停下後call stack就會列出所有一連串的函示呼叫順序!!清楚明瞭整個程式呼叫流程!
+
+至於為什麼叫stack不是queue有興趣的可以在Google查這兩個關鍵字~
+
+進階除錯工具請參考我後續的文章~
 
 待續。。。
 ## 程式除錯練習題
