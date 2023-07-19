@@ -71,5 +71,7 @@ tags:
 
 有興趣想深入的還可以看我這篇[vs code python進階擴充套件 安裝 使用](./2023-07-16-Visual%20Studio%20Code%20python%20進階擴充套件%20安裝%20使用%20介紹.md)以及[Visual Studio Code結合WSL](./2023-06-17-VScode%20+%20Remote%20Wsl%20+%20Docker%20的使用.md)
 
+
+待續。。。
 ## 結語
 讓使用vs code更具有效率~
