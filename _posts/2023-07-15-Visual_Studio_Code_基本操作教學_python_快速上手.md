@@ -147,7 +147,7 @@ Browse Language Extensions就是要推薦你好用的程式語言擴充套件，
 * 全速執行run(到中斷點會停止)
 * 執行下一行程式不進入函式step over
 
-之後有多餘時間我在特別寫一篇除錯程式碼的常用方法~
+之後有多餘時間我在[特別寫一篇除錯程式碼的常用方法]({% link _posts/2023-07-19-Visual_Studio_Code_python_debugging_tutorial.md %})~
 
 怎麼先假設你對上面列的有基本認知~
 
