@@ -119,5 +119,11 @@ SD Card的設定是Port=1 FS/Raw=0 1x01000 x代表don't care，你要1或0都可
 
 Ref: [SK-AM62: FAQ: How do I set the DIP switches to get a certain boot mode?](https://e2e.ti.com/support/processors-group/processors/f/processors-forum/1126872/faq-sk-am62-faq-how-do-i-set-the-dip-switches-to-get-a-certain-boot-mode)
 
+## 上電開機進入Terminal
+
+選好開機模式後，如果要開機進入終端機，可以使用Micro-USB to USB Type A的高品質線，Micro-USB端接至板子上的J15 UART，另一頭接至Host PC，然後開啟Putty設定COM Port以及Baud rate，接下來上電就會有開機message。
+
+Login的話輸入root即可登入。
+
 ## 結語
 研究原理探究跟因~
