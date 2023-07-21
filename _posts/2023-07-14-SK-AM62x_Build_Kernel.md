@@ -15,7 +15,7 @@ tags:
   - AM625
 ---
 ## 前言
-本篇內容介紹 SK-AM62x 編譯source code裡的Kernel。
+本篇內容介紹 SK-AM62x 編譯source code裡的Kernel、DTS、Kernel Module。
 ## 前提準備
 * Host PC (Development Host)
 * Host PC OS: Ubuntu 18.04 LTS
