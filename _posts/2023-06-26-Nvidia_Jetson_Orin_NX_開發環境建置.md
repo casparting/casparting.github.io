@@ -19,7 +19,7 @@ Nvidia Jetson主要是用於AI邊緣或機器人的System on Module(SoM)，模�
 * target board 開發版和SOM
 * 高品質的傳輸線
 
-#### 判斷SOC型號
+### 判斷SOC型號
 
 再拿到SOM準備開始燒入Image也要先確認SOM是哪一個型號的。
 根據[Wiki](https://en.wikipedia.org/wiki/Tegra)可以知道
