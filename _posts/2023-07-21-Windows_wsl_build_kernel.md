@@ -1,5 +1,5 @@
 ---
-title: Windows WSL 編譯 Kernel 方法 步驟
+title: 編譯 替換 Windows WSL Kernel 方法 步驟
 excerpt: >
   說明編譯Windows WSL Kernel的方法。
 categories:
