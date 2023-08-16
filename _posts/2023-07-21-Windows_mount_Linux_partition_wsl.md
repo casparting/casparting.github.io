@@ -1,5 +1,5 @@
 ---
-title: Windows Mount Linux Partition in WSL 掛載 存取 Linux USB SD Card
+title: Windows Mount Linux Partition in WSL 掛載 存取 Linux USB SD Card 隨身碟
 excerpt: >
   解決Windows WSL 無法掛載 Linux USB或 SD card問題。
 categories:
