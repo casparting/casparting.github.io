@@ -13,7 +13,7 @@ RUN apk add --no-cache build-base gcc cmake git
 
 # Update the Ruby bundler and install Jekyll
 RUN gem update bundler && gem install bundler jekyll
-RUN gem install jekyll-include-cache jekyll-feed
+RUN gem install jekyll-include-cache jekyll-feed jekyll-seo-tag
 RUN gem install jekyll-gist jekyll-sitemap jekyll-paginate
 
 # Add Jekyll dependencies to Alpine
