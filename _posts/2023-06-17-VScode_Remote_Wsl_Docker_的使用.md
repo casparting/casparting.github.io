@@ -51,6 +51,7 @@ $ sudo groupadd docker
 $ sudo usermod -aG docker $USER
 ```
 ## Troubleshooting
+### VS Code: Exec format error wsl
 如果在WSL執行
 ```console
 code .
@@ -61,8 +62,21 @@ VS Code: Exec format error wsl
 ```
 請到家目錄把.vscode-server和.vscode-remote-containers刪除重新開機再執行code .
 
-這篇文章的方法我主要是用在撰寫部落格~
+這篇文章主要是在撰寫部落格~
 [建立自己的部落格_Minimal_Mistakes]({% link _posts/2023-06-16-建立自己的部落格_Minimal_Mistakes.md %})
+
+### Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+如果是Windows 10的使用者，每次啟動WSL時都需要執行底下指令
+
+```console
+$ sudo service docker start
+```
+
+在執行底下指令確認是否能正常運行docker container
+```console
+$ sudo docker run hello-world
+```
 
 ## 其他相關vs code的文章
 * [Visual_Studio_Code_基本操作教學_python_快速上手]({% link _posts/2023-07-15-Visual_Studio_Code_基本操作教學_python_快速上手.md %})
